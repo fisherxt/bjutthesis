@@ -5,22 +5,23 @@
 %\usepackage{layout, showframe}
 
 \ezsetkeys{%
-	clc            = {TU311},
-	udc            = {004},
-	schoolcode     = {10005},
-	secretlevel    = {公开},
-	studentid      = {B200004000},
-	ctitle         = {\bjutthesis~\version\,——北京工业大学博士学位论文\LaTeX 模板},
-	cauthor        = {姚明},
-	cdiscipline    = {体育学},
-	cmajor         = {职业篮球},
-	cdegree        = {工学博士},
+	clc            = {TU311},      % 中文图书分类号
+	udc            = {004},        % 十进制分类号
+	schoolcode     = {10005},      % 学校编号
+	secretlevel    = {公开},       % 密级
+	studentid      = {B200004000}, % 学号
+	% ==== 中文信息
+	ctitle         = {\bjutthesis\,\version\,——北京工业大学博士学位论文\LaTeX 模板},
+	cauthor        = {姚明}, 
+	cdiscipline    = {体育学},   % 学科  
+	cmajor         = {职业篮球}, % 研究方向
+	cdegree        = {工学博士}, 
 	csupervisor    = {杜修力},
 	csupervstitle  = {教授},
 	ccollege       = {XX学院},  
 	cdate          = {\the\year 年\the\month 月},
 	corganization  = {北京工业大学},
-	%% ==== 英文
+	%% ==== 英文信息
 	etitle         = {\bjutthesis: A~\LaTeX~Template for Doctral Dissertation of Beijing University of Technology},
 	edegree        = {Doctor of Engineering},
 	emajor         = {Basketball},
@@ -28,32 +29,29 @@
 	esupervisor    = {DU　Xiuli}
 }
 
-\makeatletter
 \begin{document}
-\makecover
-\maketitle
-\makestate
-\makeatother
-\frontmatter
-\include{./tex/abstract}
-\makebitoc
+\makecover                          % -- 封面
+\maketitle                          % -- 扉页
+\makestate                          % -- 声明页
 
-\mainmatter
-\include{./tex/chapter01}
+\frontmatter                        %% ==== 前页 ====
+\include{./tex/abstract}            % -- 摘要，关键词
+\makebitoc                          % -- 中英文目录
+
+\mainmatter                         %% ==== 正文 ====
+\include{./tex/chapter01}           % -- 第, 章
 \include{./tex/chapter02}
 \include{./tex/chapter03}
 \include{./tex/chapter04}
 \include{./tex/chapter05}
+\include{./tex/conclusion}          % -- 结论
+\makebib{./ref/reference}           % -- 参考文献，GB/T-7714(2015)
 
-% bibliography, glossary and index would go here.
-\include{./tex/conclusion}
-\makebib{./ref/reference}
-
-\appendix
+\appendix                           %% ==== 附录 ====
 \include{./tex/appendix_a}
 \include{./tex/appendix_b}
 
-\backmatter
-\include{./tex/publication}
-\include{./tex/acknowledgement}
+\backmatter                         %% ==== 附页 ====
+\include{./tex/publication}         % -- 发表文献
+\include{./tex/acknowledgement}     % -- 致谢
 \end{document}
