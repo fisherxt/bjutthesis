@@ -1,0 +1,60 @@
+%!TEX program = xelatex
+%-*- coding: UTF-8 -*-
+\documentclass{bjutthesis}
+\usepackage{lipsum, zhlipsum}
+%\usepackage{layout, showframe}
+\pgfplotsset{compat=1.16}
+
+\ezsetkeys{%
+	clc            = {TU311},
+	udc            = {004},
+	schoolcode     = {10005},
+	secretlevel    = {公开},
+	studentid      = {B200004000},
+	ctitle         = {\bjutthesis~\version~——北京工业大学博士学位论文\LaTeX 模板},
+	cauthor        = {姚明},
+	cdiscipline    = {体育学},
+	cmajor         = {篮球},
+	cdegree        = {工学博士},
+	csupervisor    = {杜修力},
+	csupervstitle  = {教授},
+	ccollege       = {XX学院},  
+	cdate          = {\the\year 年\the\month 月},
+	corganization  = {北京工业大学},
+	%% ==== 英文
+	etitle         = {\bjutthesis: A~\LaTeX~Template for Doctral Dissertation of Beijing University of Technology},
+	edegree        = {Doctor of Engineering},
+	emajor         = {Basketball},
+	eauthor        = {YAO Ming},
+	esupervisor    = {DU　Xiuli}
+}
+
+\makeatletter
+\begin{document}
+\makecover
+\maketitle
+\makestate
+\makeatother
+\frontmatter
+\include{./tex/abstract}
+\makebitoc
+
+\mainmatter
+\include{./tex/chapter01}
+\include{./tex/chapter02}
+\include{./tex/chapter03}
+\include{./tex/chapter04}
+\include{./tex/chapter05}
+
+% bibliography, glossary and index would go here.
+\include{./tex/conclusion}
+\makebib{ref/reference}
+
+\appendix
+\include{./tex/appendix_a}
+\include{./tex/appendix_b}
+
+\backmatter
+\include{./tex/publication}
+\include{./tex/acknowledgement}
+\end{document}

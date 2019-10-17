@@ -1,0 +1,37 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ezinfo}[2019/10/01 for easy input and use of thesis metadata]
+
+\RequirePackage{xparse}
+\RequirePackage{xkeyval, kvsetkeys}
+
+%\newcommand\ez@title\empty
+%\newcommand\eztitle[1]{\renewcommand\ez@title{#1}}
+\NewDocumentCommand\ez@def@key{m}{%
+	\@namedef{ez#1}##1{\@namedef{ez@#1}{##1}}	
+	\define@key{ez}{#1}{\csname ez#1\endcsname{##1}} }
+\NewDocumentCommand{ \ezsetkeys}{m}{\kvsetkeys{ez}{#1} }
+
+\ez@def@key{udc}           % Universal Decimal Classification
+\ez@def@key{clc}           % Chinese Library Classification Category
+\ez@def@key{schoolcode}
+\ez@def@key{secretlevel}
+\ez@def@key{studentid}
+%% ---- Chinese
+\ez@def@key{ctitle}
+\ez@def@key{cauthor}
+\ez@def@key{csupervisor}
+\ez@def@key{csupervstitle}
+\ez@def@key{cdiscipline}
+\ez@def@key{cmajor}
+\ez@def@key{cdegree}
+\ez@def@key{ccollege}
+\ez@def@key{cdate}
+\ez@def@key{corganization}
+%% ---- English
+\ez@def@key{etitle}
+\ez@def@key{eauthor}
+\ez@def@key{ediscipline}
+\ez@def@key{emajor}
+\ez@def@key{esupervisor}
+\ez@def@key{esupervstitle}
+\ez@def@key{edegree}

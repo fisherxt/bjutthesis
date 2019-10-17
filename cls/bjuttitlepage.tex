@@ -1,0 +1,46 @@
+\begin{titlepage}
+%	\newgeometry{left=3cm, right=3cm, top=2.5cm, bottom=5.0cm}
+	\begin{center}\zihao{5}
+		\renewcommand\arraystretch{.9}
+		\setlength\tabcolsep{0pt}
+		\setlength\cellwidth{30mm}
+		\setlength\cellwidthtwo{20mm}
+		\begin{tabular}{p{\cellwidth}p{76mm}p{\cellwidthtwo}l}%@{\hspace{-.5em}}
+			\makebox[\cellwidth][s]{{\hfill}UDC：}   & \ez@udc & \makebox[\cellwidthtwo][s]{学校代码：} & \ez@schoolcode \\
+			\makebox[\cellwidth][s]{中文图书分类号：} & \ez@clc & \makebox[\cellwidthtwo][s]{学号：} & \ez@studentid\\
+		     & & \makebox[\cellwidthtwo][s]{密级：} & \ez@secretlevel
+		\end{tabular}
+	\end{center}
+	\vskip 1.5cm
+	\begin{center}
+		\makebox[12cm][s]{\zihao{-1}\textbfkai{北京工业大学工学博士学位论文}}
+	\end{center}
+	\vskip 1.5cm
+	\begin{center}
+		\renewcommand\arraystretch{1.1}
+		\setlength\tabcolsep{0pt}
+		\setlength\cellwidth{20mm}
+		\begin{tabular}{p{\cellwidth}@{：}p{10cm}}
+			\makebox[\cellwidth][s]{\zihao{4}\textbfsong{题目}}     & \zihao{4}{\ez@ctitle\hfill}\\
+			\cline{2-2}
+			\makebox[\cellwidth][s]{\zihao{4}\textbfsong{英文题目}} & \zihao{4}{\MakeUppercase\ez@etitle}\\
+			\cline{2-2}
+		\end{tabular}
+	\end{center}
+	\vfill
+	\begin{flushleft}\zihao{4}\fangsong
+		\leftskip 1cm
+		\setlength\tabcolsep{0pt}
+		\setlength\cellwidth{4cm}
+		\begin{tabular}{p{\cellwidth}@{：}l}
+			\makebox[\cellwidth][s]{\textbffangsong{论文作者}}     & \ez@cauthor\\				
+			\makebox[\cellwidth][s]{\textbffangsong{学科专业}}     & \ez@cdiscipline\\				
+			\makebox[\cellwidth][s]{\textbffangsong{研究方向}}     & \ez@cmajor\\				
+			\makebox[\cellwidth][s]{\textbffangsong{申请学位}}     & \ez@cdegree\\				
+			\makebox[\cellwidth][s]{\textbffangsong{指导教师}}     & \ez@csupervisor~\ez@csupervstitle\\				
+			\makebox[\cellwidth][s]{\textbffangsong{所在单位}}     & \ez@ccollege\\				
+			\makebox[\cellwidth][s]{\textbffangsong{答辩日期}}     & \ez@cdate\\				
+			\makebox[\cellwidth][s]{\textbffangsong{授予学位单位}} & \ez@corganization\\
+		\end{tabular}
+	\end{flushleft}
+\end{titlepage}\restoregeometry

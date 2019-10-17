@@ -1,0 +1,92 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{bitoc}[2019/10/01 bilingual tableofcontents for thesis]
+
+\usepackage{xparse}
+
+%% NEW Commands
+\newcommand{\echaptername}{Chapter}
+\NewDocumentCommand{\bichapter} {sO{}mm} {% 
+	% O{} or #2 for set fontshape of English chapter entries in Chinese ToC
+	{\ctexset{chapter/format+={#2}}
+	\IfBooleanTF{#1} {
+		\chapter*{#3}
+		\markboth{\MakeUppercase#3}{}
+		\addcontentsline{toc}{chapter}{#2#3} 
+		\addcontentsline{toe}{chapter}{\bfseries#4} 
+	} {
+		\chapter{#3}
+		\addcontentsline{toe}{chapter}{\bfseries\echaptername~\thechapter~~#4} 
+	}}
+}
+\NewDocumentCommand{\bisection} {mm} {%
+	\section{#1}
+	\addcontentsline{toe}{section}{\thesection~~#2} 
+}
+\NewDocumentCommand{\bisubsection} {mm} {%
+	\subsection{#1}
+	\addcontentsline{toe}{subsection}{\thesubsection~~#2} 
+}
+
+%% ==== NEW Environments
+% ==== Abstract Environment
+\newcommand{\cabstractname}{摘要}
+\newcommand{\eabstractname}{Abstract}
+\newcommand\ckeywords{\par\vspace{12pt}\noindent{\zihao{-4}\heiti 关键词：}\relax}
+\newcommand\ekeywords{\par\vspace{12pt}\noindent{\zihao{-4}\bfseries Keywords:~}\relax}
+\NewDocumentEnvironment{cabstract}{}{%
+	\bichapter*{\cabstractname}{\eabstractname~(in Chinese)}
+}{}
+\NewDocumentEnvironment{eabstract}{}{%
+	\bichapter*[\bfseries]{\eabstractname}{\eabstractname}
+}{}
+
+% ==== Conclusions Environment
+\newcommand\cconcltitle{结论与展望}
+\newcommand\econcltitle{Conclusions}
+\NewDocumentEnvironment{conclusion}{}{%
+	\bichapter*{\cconcltitle}{\econcltitle}
+}{}
+
+% ==== Bibliography in Bilingual ToC
+\newcommand{\cbibname}{参考文献}
+\newcommand{\ebibname}{Reference}
+\renewcommand\bibname\cbibname
+\NewDocumentCommand{\makebib}{m}{
+	\bibliography{#1}
+	\addcontentsline{toc}{chapter}{\bibname}
+	\addcontentsline{toe}{chapter}{\bfseries\ebibname}}
+
+% ==== Appendix Environment
+\newcommand{\cappendixname}{附录}
+\newcommand{\eappendixname}{Appendix}
+\renewcommand{\appendixname}{\cappendixname}
+\NewDocumentCommand{\biappendix} {mm} {%
+	\chapter{#1}
+	\addcontentsline{toe}{chapter}{\bfseries\eappendixname~\thechapter~~#2} }
+
+% ==== Publication Environment
+\newcommand\cpubtitle{攻读博士学位期间所发表的学术论文}
+\newcommand\epubtitle{Publications}
+\NewDocumentEnvironment{publication}{}{%
+	\bichapter*{\cpubtitle}{\epubtitle}
+}{}
+
+% ==== Acknowledgement Environment
+\newcommand\cacktitle{致谢}
+\newcommand\eacktitle{Acknowledgement}
+\NewDocumentEnvironment{acknowledgement}{}{%
+	\bichapter*{\cacktitle}{\eacktitle}
+}{}
+
+%% ==== Make Bilingual ToC
+\newcommand\ccontentsname{目录}
+\newcommand\econtentsname{Contents}
+\renewcommand\contentsname\ccontentsname
+\newcommand{\makebitoc}{%
+	{\zihao{-4}\linespread{1.56}\selectfont\tableofcontents}\normalsize
+	\addcontentsline{toc}{chapter}{\ccontentsname}
+	\addcontentsline{toe}{chapter}{\bfseries\econtentsname~(in Chinese)}
+	
+	\bichapter*[\bfseries]{\econtentsname}{\econtentsname}
+	{\zihao{-4}\linespread{1.56}\selectfont\@starttoc{toe}}\normalsize
+}
