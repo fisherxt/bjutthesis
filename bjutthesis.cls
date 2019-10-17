@@ -1,12 +1,12 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{bjutthesis}[2019/09/16 2.7 Thesis Template]
 
-%% Template MACROs
-\DeclareRobustCommand{\bjutthesis}{{\rmfamily B\textsc{\kern-.1emj\kern-.025emu\kern-.02emt}\kern-.08emT\kern-.1667em\lower.475ex\hbox{H}\kern-.0667emE\kern-.0667em\lower.475ex\hbox{S}\kern-.05emI\kern-.0667em\lower.475ex\hbox{S}} }
-\newcommand\version{ver.\,2.7}
-
 \RequirePackage{xparse}
 \RequirePackage{ezinfo}
+
+%% Template MACROs
+\DeclareRobustCommand{\bjutthesis}{ {\rmfamily B\textsc{\kern-.1emj\kern-.025emu\kern-.02emt}\kern-.08emT\kern-.1667em\lower.475ex\hbox{H}\kern-.0667emE\kern-.0667em\lower.475ex\hbox{S}\kern-.05emI\kern-.0667em\lower.475ex\hbox{S}} }
+\def\version{ver.\,2.7}
 
 %% ==== basics
 \LoadClass[UTF8, scheme=plain, zihao=-4, linespread=1.56]{ctexbook}
@@ -75,7 +75,7 @@
 
 %% ==== layout
 \RequirePackage{geometry}
-\geometry {
+\geometry {%
   a4paper,
   hcentering,
   ignoreall,
@@ -98,7 +98,7 @@
   \fancyhead[OC]{\headerfont\leftmark}
   \fancyhead[EC]{\headerfont\headertext}
   \fancyfoot{}
-  \fancyfoot[C]{\zihao{-5}--\ \thepage\ --}
+  \fancyfoot[C]{\zihao{-5}--\,\thepage\,--}
   \renewcommand{\headrulewidth}{0.4pt}
   \renewcommand{\footrulewidth}{\z@} }
 
@@ -136,8 +136,8 @@
 \urlstyle{same}
 
 %% ==== eqs, figs and tabs
-\RequirePackage{amsmath, mathtools, upgreek}       % eqs
-\RequirePackage{graphicx, xcolor, tikz, pgfplots}    % figs
+\RequirePackage{amsmath, mathtools, upgreek}             % eqs
+\RequirePackage{graphicx, xcolor, tikz, pgfplots}        % figs
 \RequirePackage{booktabs, longtable, multirow, dcolumn}  % tabs
 \RequirePackage{caption}
 \RequirePackage{subcaption}
@@ -239,7 +239,7 @@
     \renewcommand\arraystretch{.9}
     \setlength\tabcolsep{0pt}
     \begin{tabular}{p{30mm}p{76mm}p{20mm}l}%@{\hspace{-.5em}}
-      \makebox[30mm][s]{{\hfill}UDC：}   & \ez@udc & \makebox[20mm][s]{学校代码：} & \ez@schoolcode \\
+      \makebox[30mm][s]{{\hfill}UDC：} & \ez@udc & \makebox[20mm][s]{学校代码：} & \ez@schoolcode \\
       \makebox[30mm][s]{中文图书分类号：} & \ez@clc & \makebox[20mm][s]{学号：} & \ez@studentid\\
        & & \makebox[20mm][s]{密级：} & \ez@secretlevel
     \end{tabular}
