@@ -3,7 +3,7 @@
 
 %% Template MACROs
 %\newcommand\bjutthesis{\textsc{B\kern-.08em\lower.26ex\hbox{j}\kern-.04emu\kern-.02em\lower.26ex\hbox{t}\kern-.12emT\kern-.12em\lower.26ex\hbox{h}\kern-.0eme\kern-.0em\lower.26ex\hbox{s}\kern-.0emi\kern-.0em\lower.26ex\hbox{s}}}
-\DeclareRobustCommand{\bjutthesis}{ \rmfamily B\textsc{\kern-.1emj\kern-.025emu\kern-.02emt}\kern-.08emT\kern-.1667em\lower.5ex\hbox{H}\kern-.0667emE\kern-.0667em\lower.5ex\hbox{S}\kern-.05emI\kern-.0667em\lower.5ex\hbox{S}}
+\DeclareRobustCommand{\bjutthesis}{{\rmfamily B\textsc{\kern-.1emj\kern-.025emu\kern-.02emt}\kern-.08emT\kern-.1667em\lower.475ex\hbox{H}\kern-.0667emE\kern-.0667em\lower.475ex\hbox{S}\kern-.05emI\kern-.0667em\lower.475ex\hbox{S}} }
 \newcommand\version{ver.~2.7}
 
 \RequirePackage{xparse}
@@ -201,25 +201,28 @@
 % ==== cover, titlepage and declaration page
 \RequirePackage{ragged2e}
 \RequirePackage[pagecolor=white, nopagecolor=white]{pagecolor}
-\RequirePackage[copies]{contour}
+\RequirePackage[copies]{contour}  % outlined text on cover
 \contourlength{2pt}
-% ---- aux command for set bunch of 
+% ---- aux command for set bunch of length and font
 \newlength\cellwidth
 \newlength{\cellwidthtwo}
 \newcommand\itemnamefont\normalfont
 \newcommand{\makecover}{%
-	\input{bjutcover.tex}
+	\input{./cls/bjutcover}
 	\global\let\makecover\relax
 }
 \renewcommand{\maketitle}{%
-	\input{bjuttitlepage.tex}
+	\input{./cls/bjuttitle}
 	\global\let\maketitle\relax
 }
 \newcommand{\makestate}{%
-	\input{bjutstatement.tex}
+	\input{./cls/bjutstate}
 	\global\let\makestate\relax
 }
 
+\AtEndPreamble{%
+    \pgfplotsset{compat=1.16}
+}
 \AtBeginDocument{%
 	\pagestyle{empty}
 }

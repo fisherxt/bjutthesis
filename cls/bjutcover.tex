@@ -5,17 +5,16 @@
 	\begin{flushleft}\zihao{5}\heiti
 		\renewcommand\arraystretch{.75}
 		\setlength\tabcolsep{2pt}
-		\setlength\cellwidth{30mm}
-		\begin{tabular}{p{\cellwidth}l}
-			\makebox[\cellwidth][s]{中文图书分类号:} & \ez@clc \\
-			\makebox[\cellwidth][s]{密级:}          & \ez@secretlevel\\
-			\makebox[\cellwidth][s]{{\hfill}UDC:}   & \ez@udc \\  
-			\makebox[\cellwidth][s]{学校代码:}      & \ez@schoolcode \\
+		\begin{tabular}{p{30mm}l}
+			\makebox[30mm][s]{中文图书分类号:} & \ez@clc \\
+			\makebox[30mm][s]{密级:}          & \ez@secretlevel\\
+			\makebox[30mm][s]{{\hfill}UDC:}   & \ez@udc \\  
+			\makebox[30mm][s]{学校代码:}      & \ez@schoolcode \\
 		\end{tabular}
 	\end{flushleft}
 	\vskip 1.5cm	
 	\begin{center}
-		\includegraphics[width=10.5cm]{bjutxbxmwhite.pdf}	
+		\includegraphics[width=10.5cm]{./cls/bjut_logo_white}	
 		\vskip 1.6cm
 		\contour[20]{white}{\makebox[12cm][s]{\fontsize{48}{48}\heiti 博士学位论文}}
 		\vskip .8cm
@@ -26,13 +25,12 @@
 		\leftskip 2.5cm
 		\renewcommand\arraystretch{1.6}
 		\setlength\tabcolsep{4pt}
-		\setlength\cellwidth{45mm}
-		\begin{tabular}{p{\cellwidth}@{：}p{92mm}}
-			\makebox[\cellwidth][s]{论文题目} & \ez@ctitle \\
-			\makebox[\cellwidth][s]{论文作者} & \ez@cauthor \\
-			\makebox[\cellwidth][s]{学科}     & \ez@cdiscipline \\
-			\makebox[\cellwidth][s]{指导教师} & \ez@csupervisor\\
-			\makebox[\cellwidth][s]{论文提交日期} & \ez@cdate
+		\begin{tabular}{p{45mm}@{：}p{92mm}}
+			\makebox[45mm][s]{论文题目} & \ez@ctitle \\
+			\makebox[45mm][s]{论文作者} & \ez@cauthor \\
+			\makebox[45mm][s]{学科}     & \ez@cdiscipline \\
+			\makebox[45mm][s]{指导教师} & \ez@csupervisor\\
+			\makebox[45mm][s]{论文提交日期} & \ez@cdate
 		\end{tabular}
 	\end{flushleft}\normalsize\normalfont
 \end{titlepage}\restoregeometry\nopagecolor
