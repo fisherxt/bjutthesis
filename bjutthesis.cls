@@ -187,7 +187,8 @@
 
 % ==== cover, titlepage and declaration page
 \RequirePackage{ragged2e}
-\RequirePackage[normalem]{ulem}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ulined}{}
 \RequirePackage[pagecolor=white, nopagecolor=white]{pagecolor}
 \RequirePackage[copies]{contour}  % outlined text on cover
 \contourlength{2pt}
@@ -253,10 +254,10 @@
     \renewcommand\arraystretch{1.0}
     \setlength\tabcolsep{0pt}
     \begin{tabular}{p{20mm}@{：}p{10.8cm}}
-      \makebox[20mm][s]{\zihao{4}\textbfsong{题目}} & \zihao{4}\ez@ctitle\\
-      \cline{2-2}
-      \makebox[20mm][s]{\zihao{4}\textbfsong{英文题目}} & \zihao{4}\MakeUppercase\ez@etitle\\
-      \cline{2-2}
+      \makebox[20mm][s]{\zihao{4}\textbfsong{题目}} & \zihao{4}{\ulined\ez@ctitle\hfill\mbox{}}\\
+      % \cline{2-2}
+      \makebox[20mm][s]{\zihao{4}\textbfsong{英文题目}} & \zihao{4}\MakeUppercase{\ulined\ez@etitle\hfill\mbox{}}\\
+      % \cline{2-2}
     \end{tabular}
   \end{center}
   \vfill
@@ -276,6 +277,29 @@
   \end{flushleft}
 \end{titlepage}\restoregeometry
 \global\let\maketitle\relax }
+
+\newcommand\makeetitle{%
+  \begin{titlepage}
+    \mbox{}
+    \vfill
+    \begin{center}
+      \zihao{4}\bfseries\MakeUppercase\ez@etitle
+    \end{center}
+    \vfill
+    \begin{center}
+      A DISSERTATION\\
+      SUBMITTED TO THE \MakeUppercase\ez@ecollege\ AND THE COMMITTEE ON GRADUATE STUDIES OF BEIJING UNIVERSITY OF TECHNOLOGY\\
+      IN PARTIAL FULFILLMENT OF THE REQUIREMENTS \\
+      FOR THE DEGREE OF \\
+      DOCTOR OF PHILOSOPHY
+    \end{center}
+    \vfill
+    \begin{center}
+    \ez@eauthor\\
+    \ez@edate
+    \end{center}
+  \end{titlepage} 
+  \let\makeetitle\relax}
 
 \newcommand{\makestate}{%
   \begin{titlepage}

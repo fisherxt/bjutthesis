@@ -2,6 +2,9 @@
 %-*- coding: UTF-8 -*-
 \documentclass{bjutthesis}
 \usepackage{lipsum, zhlipsum}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+\setlist{nosep}
 %\usepackage{layout, showframe}
 
 \ezsetkeys{%
@@ -26,12 +29,15 @@
 	edegree        = {Doctor of Engineering},
 	emajor         = {Basketball},
 	eauthor        = {YAO Ming},
-	esupervisor    = {DU Xiuli}
+	esupervisor    = {DU Xiuli},
+	ecollege       = {College of Architecture and Civil Engineering},
+	edate          = {September, \the\year}
 }
 
 \begin{document}
 \makecover                          % -- 封面
-\maketitle                          % -- 扉页
+\maketitle                          % -- 扉页    
+\makeetitle                         % -- 扉页（英文）           
 \makestate                          % -- 声明页
 
 \frontmatter                        %% ==== 前页 ====
