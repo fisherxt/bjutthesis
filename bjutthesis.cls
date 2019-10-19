@@ -251,7 +251,7 @@
   \end{center}
   \vskip 1.2cm
   \begin{center}
-    \renewcommand\arraystretch{1.0}
+    \renewcommand\arraystretch{1.5}
     \setlength\tabcolsep{0pt}
     \begin{tabular}{p{20mm}@{：}p{10.8cm}}
       \makebox[20mm][s]{\zihao{4}\textbfsong{题目}} & \zihao{4}{\ulined\ez@ctitle\hfill\mbox{}}\\
@@ -285,7 +285,7 @@
     \begin{center}
       \zihao{4}\bfseries\MakeUppercase\ez@etitle
     \end{center}
-    \vfill
+    \vspace{\stretch{2}}
     \begin{center}
       A DISSERTATION\\
       SUBMITTED TO THE \MakeUppercase\ez@ecollege\ AND THE COMMITTEE ON GRADUATE STUDIES OF BEIJING UNIVERSITY OF TECHNOLOGY\\
@@ -293,11 +293,13 @@
       FOR THE DEGREE OF \\
       DOCTOR OF PHILOSOPHY
     \end{center}
-    \vfill
+    \vspace{\stretch{2}}
     \begin{center}
-    \ez@eauthor\\
+    \ez@eauthor
+    \par
     \ez@edate
     \end{center}
+    \vfill
   \end{titlepage} 
   \let\makeetitle\relax}
 

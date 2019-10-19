@@ -1,13 +1,13 @@
 %!TEX program = xelatex
 %-*- coding: UTF-8 -*-
 \documentclass{bjutthesis}
-\usepackage{lipsum, zhlipsum}
+\usepackage{lipsum, zhlipsum, xpinyin}
 \usepackage[shortlabels]{enumitem}
-\setlist{nosep, noitemsep}
-\setlist[enumerate]{label=（\arabic*）, itemindent=0pt, labelwidth=0pt, align=left}
+\setlist[enumerate]{label=（\arabic*）}
+\setlist{nosep, noitemsep, wide}
 %\usepackage{layout, showframe}
 
-\ezsetkeys{%
+\ezsetkeys {%
 	clc            = {TU311},      % 中文图书分类号
 	udc            = {004},        % 十进制分类号
 	schoolcode     = {10005},      % 学校编号
@@ -16,8 +16,8 @@
 	% ==== 中文信息
 	ctitle         = {\bjutthesis\,\version\,——北京工业大学博士学位论文\LaTeX 模板},
 	cauthor        = {姚明}, 
-	cdiscipline    = {体育学},   % 学科  
-	cmajor         = {职业篮球}, % 研究方向
+	cdiscipline    = {体育学},     % 学科  
+	cmajor         = {职业篮球},   % 研究方向
 	cdegree        = {工学博士}, 
 	csupervisor    = {杜修力},
 	csupervstitle  = {教授},
@@ -48,8 +48,6 @@
 \include{./tex/chapter01}           % -- 第, 章
 \include{./tex/chapter02}
 \include{./tex/chapter03}
-\include{./tex/chapter04}
-\include{./tex/chapter05}
 \include{./tex/conclusion}          % -- 结论
 \makebib{./ref/reference}           % -- 参考文献，GB/T-7714(2015)
 
