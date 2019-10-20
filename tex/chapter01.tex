@@ -1,14 +1,10 @@
-\bichapter{绪论}{xu lun}
-\label{chap:intro}
-
+\bichapter{绪论}{Introduction}\label{chap:intro}
 \cref{chap:intro}绪论正文内容\cite{同鸣2012}正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容。
 
 正文内容正文内容正文内容正文内容正文内容正文内容\cite{Boutsidis2011}正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容。
 
 
-\bisection{离离原上草}{li li yuan shang cao}
-\label{sec:llysc}
-
+\bisection{离离原上草}{li li yuan shang cao}\label{sec:llysc}
 \cref{sec:llysc}\citep{同鸣2012}正文内容正文内容\citet{同鸣2012}正文内容正文内容正文内容正文内容\cite{同鸣2012, Lee1999, Tang2013, Ding2006Orthogonal}正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容。正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容
 
 \begin{multline}
@@ -31,7 +27,7 @@
 
 \bisubsection{豆在釜中泣}{\pinyin{dou4zai4fu3zhong1qi4}}
 
-\zhlipsum[1-3][name=simp]
+\zhlipsum[2-3][name=simp]
 
 \begin{figure}[!htp]
 	\centering
@@ -61,6 +57,35 @@
 		Emu&stuffed&33.33\\
 		Armadillo&frozen&8.99\\\bottomrule
 	\end{tabular}
+\end{table}
+\footnotetext[1]{这个例子来自\href{http://www.ctan.org/tex-archive/macros/latex/contrib/booktabs/booktabs.pdf}{《Publication quality tables in LATEX》}(booktabs宏包的文档)。这也是一个在表格中使用脚注的例子，请留意与threeparttable实现的效果有何不同。}
+
+下面一个是一个更复杂的表格，用threeparttable实现带有脚注的表格，如表\ref{tab:footnote}。
+
+\newcolumntype{d}[1]{D{.}{.}{#1}}% or D{.}{,}{#1} or D{.}{\cdot}{#1}
+\begin{table}[!htpb]
+	\bicaption[出现在表目录的标题]
+	{一个带有脚注的表格的例子}
+	{A Table with footnotes}
+	\label{tab:footnote}
+	\centering
+	\begin{threeparttable}[b]
+		\begin{tabular}{ccd{4}cccc}
+			\toprule
+			\multirow{2}{6mm}{total}&\multicolumn{2}{c}{20\tnote{1}} & \multicolumn{2}{c}{40} &  \multicolumn{2}{c}{60}\\
+			\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+			&www & \multicolumn{1}{c}{k} & www & k & www & k \\ % 使用说明符 d 的列会自动进入数学模式，使用 \multicolumn 对文字表头做特殊处理
+			\midrule
+			&$\underset{(2.12)}{4.22}$ & 120.0140\tnote{2} & 333.15 & 0.0411 & 444.99 & 0.1387 \\
+			&168.6123 & 10.86 & 255.37 & 0.0353 & 376.14 & 0.1058 \\
+			&6.761    & 0.007 & 235.37 & 0.0267 & 348.66 & 0.1010 \\
+			\bottomrule
+		\end{tabular}
+		\begin{tablenotes}
+			\item [1] the first note.% or \item [a]
+			\item [2] the second note.% or \item [b]
+		\end{tablenotes}
+	\end{threeparttable}
 \end{table}
 
 \bisubsection{相煎何太急}{xiang jian he tai ji}

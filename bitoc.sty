@@ -1,31 +1,25 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{bitoc}[2019/10/01 bilingual tableofcontents for thesis]
+\ProvidesPackage{bitoc}[2019/10/01 bilingual tableofcontents for bjutthesis]
 
 \usepackage{xparse}
 
 %% NEW Commands
 \newcommand{\echaptername}{Chapter}
 \NewDocumentCommand{\bichapter} {sO{}mm} {% 
-	% O{} or #2 for set fontshape of English chapter entries in Chinese ToC
-%	\ctexset{chapter/titleformat+={#2}}
-	\IfBooleanTF{#1} {
-		\chapter*{#2#3}
-		\markboth{\MakeUppercase#3}{}
-		\addcontentsline{toc}{chapter}{#2#3} 
-		\addcontentsline{toe}{chapter}{\bfseries#4} 
-	} {
-		\chapter{#2#3}
-		\addcontentsline{toe}{chapter}{\bfseries\echaptername~\thechapter~~#4} 
-	}
-}
+  % O{} or #2 for set font of English chap entries in Chinese ToC with header normalfont
+  \IfBooleanTF{#1}
+    { \chapter*{#2#3}
+      \markboth{\MakeUppercase#3}{}
+      \addcontentsline{toc}{chapter}{#2#3} 
+      \addcontentsline{toe}{chapter}{\bfseries#4} } 
+	{ \chapter{#3}
+      \addcontentsline{toe}{chapter}{\bfseries\echaptername~\thechapter~~#4}  }  }
 \NewDocumentCommand{\bisection} {mm} {%
 	\section{#1}
-	\addcontentsline{toe}{section}{\thesection~~#2} 
-}
+	\addcontentsline{toe}{section}{\thesection~~#2}  }
 \NewDocumentCommand{\bisubsection} {mm} {%
 	\subsection{#1}
-	\addcontentsline{toe}{subsection}{\thesubsection~~#2} 
-}
+	\addcontentsline{toe}{subsection}{\thesubsection~~#2}  }
 
 %% ==== NEW Environments
 % ==== Abstract Environment
@@ -54,15 +48,17 @@
 \NewDocumentCommand{\makebib}{m}{
 	\bibliography{#1}
 	\addcontentsline{toc}{chapter}{\bibname}
-	\addcontentsline{toe}{chapter}{\bfseries\ebibname}}
+	\addcontentsline{toe}{chapter}{\bfseries\ebibname}  }
 
 % ==== Appendix Environment
 \newcommand{\cappendixname}{附录}
 \newcommand{\eappendixname}{Appendix}
 \renewcommand{\appendixname}{\cappendixname}
 \NewDocumentCommand{\biappendix} {mm} {%
+	\ctexset{chapter/format=\bjut@chapter@font\raggedright}
 	\chapter{#1}
-	\addcontentsline{toe}{chapter}{\bfseries\eappendixname~\thechapter~~#2} }
+	\ctexset{chapter/format=\bjut@chapter@font\centering}
+	\addcontentsline{toe}{chapter}{\bfseries\eappendixname~\thechapter~~#2}  }
 
 % ==== Publication Environment
 \newcommand\cpubtitle{攻读博士学位期间所发表的学术论文}

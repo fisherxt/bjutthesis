@@ -2,12 +2,9 @@
 %-*- coding: UTF-8 -*-
 \documentclass{bjutthesis}
 \usepackage{lipsum, zhlipsum, xpinyin}
-\usepackage[shortlabels]{enumitem}
-\setlist[enumerate]{label=（\arabic*）}
-\setlist{nosep, noitemsep, wide}
-%\usepackage{layout, showframe}
+% \usepackage{layout, showframe}
 
-\ezsetkeys {%
+\bjutset {%
 	clc            = {TU311},      % 中文图书分类号
 	udc            = {004},        % 十进制分类号
 	schoolcode     = {10005},      % 学校编号
@@ -25,7 +22,7 @@
 	cdate          = {\the\year 年\the\month 月},
 	corganization  = {北京工业大学},
 	%% ==== 英文信息
-	etitle         = {\bjutthesis\,\version: A \LaTeX-based Template for Doctral Dissertation of Beijing University of Technology},
+	etitle         = {\bjutthesis: \LaTeX-based Template for Doctral Dissertation of Beijing University of Technology},
 	edegree        = {Doctor of Engineering},
 	emajor         = {Basketball},
 	eauthor        = {YAO Ming},
