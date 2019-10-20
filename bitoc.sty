@@ -7,16 +7,16 @@
 \newcommand{\echaptername}{Chapter}
 \NewDocumentCommand{\bichapter} {sO{}mm} {% 
 	% O{} or #2 for set fontshape of English chapter entries in Chinese ToC
-	{\ctexset{chapter/format+={#2}}
+%	\ctexset{chapter/titleformat+={#2}}
 	\IfBooleanTF{#1} {
-		\chapter*{#3}
+		\chapter*{#2#3}
 		\markboth{\MakeUppercase#3}{}
 		\addcontentsline{toc}{chapter}{#2#3} 
 		\addcontentsline{toe}{chapter}{\bfseries#4} 
 	} {
-		\chapter{#3}
+		\chapter{#2#3}
 		\addcontentsline{toe}{chapter}{\bfseries\echaptername~\thechapter~~#4} 
-	}}
+	}
 }
 \NewDocumentCommand{\bisection} {mm} {%
 	\section{#1}

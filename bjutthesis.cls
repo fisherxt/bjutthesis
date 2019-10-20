@@ -120,9 +120,6 @@
 %% ==== cross references
 \RequirePackage{hyperref}
 \RequirePackage{cleveref}
-\crefname{equation}{式}{式}
-\crefname{figure}{图}{图}
-\crefname{table}{表}{表}
 
 \hypersetup{%
   linktoc=all,
