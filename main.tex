@@ -1,57 +1,52 @@
 %!TEX program = xelatex
 %-*- coding: UTF-8 -*-
-\documentclass{bjutthesis}
-\usepackage{lipsum, zhlipsum, xpinyin}
-% \usepackage{layout, showframe}
+\documentclass[no-math]{bjutthesis} 
+\usepackage{lipsum, zhlipsum}    % for test
+% \usepackage{layout, showframe} % for test
 
 \bjutset {%
-	clc            = {TU311},      % 中文图书分类号
-	udc            = {004},        % 十进制分类号
-	schoolcode     = {10005},      % 学校编号
-	secretlevel    = {公开},       % 密级
-	studentid      = {B200004000}, % 学号
-	% ==== 中文信息
-	ctitle         = {\bjutthesis\,\version\,——北京工业大学博士学位论文\LaTeX 模板},
-	cauthor        = {姚明}, 
-	cdiscipline    = {体育学},     % 学科  
-	cmajor         = {职业篮球},   % 研究方向
-	cdegree        = {工学博士}, 
-	csupervisor    = {杜修力},
-	csupervstitle  = {教授},
-	ccollege       = {XX学院},  
-	cdate          = {\the\year 年\the\month 月},
-	corganization  = {北京工业大学},
-	%% ==== 英文信息
-	etitle         = {\bjutthesis: \LaTeX-based Template for Doctral Dissertation of Beijing University of Technology},
-	edegree        = {Doctor of Engineering},
-	emajor         = {Basketball},
-	eauthor        = {YAO Ming},
-	esupervisor    = {DU Xiuli},
-	ecollege       = {College of Architecture and Civil Engineering},
-	edate          = {September, \the\year}
+  clc            = {TU311},      % 中文图书分类号
+  udc            = {004},        % 十进制分类号
+  schoolcode     = {10005},      % 学校编号
+  secretlevel    = {公开},       % 密级
+  studentid      = {B200004000}, % 学号
+  % -- 中文信息
+  ctitle         = {\bjutthesis\,\version\,——北京工业大学博士学位论文\LaTeX 模板},
+  cauthor        = {姚明}, 
+  cdiscipline    = {体育学},     % 学科  
+  cmajor         = {职业篮球},   % 研究方向
+  cdegree        = {工学博士}, 
+  csupervisor    = {杜修力},
+  csupervstitle  = {教授},
+  ccollege       = {XX学院},  
+  cdate          = {\the\year~年\the\month~月},
+  corganization  = {北京工业大学},
+  % -- 英文信息
+  etitle         = {\bjutthesis: \LaTeX-based Template for Doctral Dissertation of Beijing University of Technology},
+  edegree        = {Doctor of Engineering},
+  emajor         = {Basketball},
+  eauthor        = {YAO Ming},
+  esupervisor    = {DU Xiuli},
+  ecollege       = {College of Architecture and Civil Engineering},
+  edate          = {\today}
 }
 
 \begin{document}
 \makecover                          % -- 封面
-\maketitle                          % -- 扉页    
-\makeetitle                         % -- 扉页（英文）           
+\maketitle                          % -- 内封    
+\makeetitle                         % -- 内封（英文）           
 \makestate                          % -- 声明页
-
 \frontmatter                        %% ==== 前页 ====
 \include{./tex/abstract}            % -- 摘要，关键词
 \makebitoc                          % -- 中英文目录
-
 \mainmatter                         %% ==== 正文 ====
-\include{./tex/chapter01}           % -- 第, 章
-\include{./tex/chapter02}
-\include{./tex/chapter03}
+\include{./tex/chapter01}           % -- 第1,2,...章
+\include{./tex/chapter02}           % -- 
 \include{./tex/conclusion}          % -- 结论
 \makebib{./ref/reference}           % -- 参考文献，GB/T-7714(2015)
-
 \appendix                           %% ==== 附录 ====
-\include{./tex/appendix_a}
-\include{./tex/appendix_b}
-
+\include{./tex/appendix_a}          % -- 附录A,B,...
+\include{./tex/appendix_b}          % --
 \backmatter                         %% ==== 附页 ====
 \include{./tex/publication}         % -- 发表文献
 \include{./tex/acknowledgement}     % -- 致谢

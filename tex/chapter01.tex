@@ -1,47 +1,123 @@
 \bichapter{绪论}{Introduction}\label{chap:intro}
-\cref{chap:intro}绪论正文内容\cite{同鸣2012}正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容。
+模板使用之初需输入论文信息，模板附带了~\verb|ezinfo|宏包，提供键值型接口~\verb|bjutset|接收输入的论文信息，每一个键都对应论文的一项信息。模板预设了常用键项，保存在模板一级目录下~\verb|ezinfo.cfg|配置文件内，示例文档~\verb|main.tex|导言区给出了输入键值的样例，形如：
 
-正文内容正文内容正文内容正文内容正文内容正文内容\cite{Boutsidis2011}正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容。
+{\linespread{1}\small
+\begin{verbatim}
+\bjutset {%
+    clc            = {TU311},      % 中文图书分类号
+    udc            = {004},        % 十进制分类号
+    schoolcode     = {10005},      % 学校编号
+    secretlevel    = {公开},       % 密级
+    studentid      = {B20xxxxxxx}, % 学号
+    % -- 中文信息
+    ctitle         = {中文题目},
+    cauthor        = {作者}, 
+    cdiscipline    = {学科}, 
+    cmajor         = {研究方向},
+    cdegree        = {学位类型}, 
+    csupervisor    = {导师},
+    csupervstitle  = {导师职称},
+    ccollege       = {学院},  
+    cdate          = {中文日期},
+    corganization  = {学位授予单位},
+    % -- 英文信息
+    etitle         = {English Title},
+    edegree        = {Doctor of Engineering},
+    emajor         = {Basketball},
+    eauthor        = {YAO Ming},
+    esupervisor    = {DU Xiuli},
+    ecollege       = {College of Architecture and Civil Engineering},
+    edate          = {\today}
+}
+\end{verbatim}}
 
+模板还附带了双语目录宏包~\verb|bitoc|，提供了三组命令~\verb|\bichapter|、\verb|\bisection|、\verb|\bisubsection|用于定义双语标题。其使用格式为：
+\begin{center}\small
+\verb|\bichapter{<中文标题>}{<English Title>}|
+\end{center}
+输入的双语标题会自动列入双语目录中。
 
-\bisection{离离原上草}{li li yuan shang cao}\label{sec:llysc}
-\cref{sec:llysc}\citep{同鸣2012}正文内容正文内容\citet{同鸣2012}正文内容正文内容正文内容正文内容\cite{同鸣2012, Lee1999, Tang2013, Ding2006Orthogonal}正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容。正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容
+正文内容宜分章、节、条、款、项五级，前三级列入目录。各级标题格式示例如下。章标题，三号黑体居中。
 
-\begin{multline}
+\bisection{离离原上草}{li li yuan shang cao}
+节标题，四号黑体顶格，正文另起一行，首行缩进两字符。
+
+\bisubsection{一岁一枯荣}{yi sui yi ku rong}
+条标题，小四号黑体顶格，正文另起一行，首行缩进两字符。
+
+\subsubsection{野火烧不尽}
+款、项标题小4号楷体，题序顶格书写，与标题间空一格，下面阐述内容在标题后空一格接排。
+
+\subsubsection{春风吹又生}
+正文小四号宋体。
+
+\bisection{引用示例}{Cross reference examples}\label{sec:llysc}
+模板中的文献处理使用~\verb|gbt7714|宏包，其文献格式排版遵循国标GB/T-7714(2015)。\verb|gbt7714|宏包的文献引用依赖于~\verb|natbib|宏包，且已默认加载，无需额外加载命令，引用命令也与~\verb|natbib|宏包一致，模板开启了压缩文献编号选项，如遇编号连续的多篇文献会自动使用连字符压缩序号，仅保留首尾序号。
+
+模板使用~\verb|cleveref|~宏包实现标签的交叉引用，并已经对引用标签进行了中文适配，适配内容保存在模板一级目录下的~\verb|cleveref.cfg|~配置文件内，如有特殊需求可自行修改，配置文件内的设定会被模板自动加载。以下为引用示例。
+
+文献普通引用\cite{同鸣2012}，文献叙述引用\citet{Boutsidis2011}，多组文献引用\cite{同鸣2012, Lee1999, Tang2013, Ding2006Orthogonal}。正文内容正文内容。章节引用\cref{chap:intro}，章节引用\cref{sec:llysc}，正文内容。公式引用\cref{eq:long}，图引用\cref{fig:flow_chart}，表引用\cref{tab:firstone}。
+
+\bisubsection{公式示例}{Equations examples}
+普通公式：
+\begin{equation}
+E=mc^2
+\end{equation}
+
+长公式：
+\begin{multline}\label{eq:long}
 \frac{1}{2}\Delta(f_{ij}f^{ij})=
 2\left(\sum_{i<j}\chi_{ij}(\sigma_i-\sigma_j)^2+f^{ij}\nabla_j\nabla_i(\Delta f)+\right .\\
 \left .\nabla_kf_{ij}\nabla^kf^{ij}+f^{ij}f^k\left[2\nabla_iR_{jk}-\nabla_kR_{ij}\right]\vphantom{\sum_{i<j}}\right)
 \end{multline}
 
-\bisubsection{煮豆燃豆萁}{\pinyin{zhu3dou4ran2dou4qi2}}
-\zhlipsum[1-3][name=simp]
-
-参见\cref{eq:none}：
-\begin{align}
-\label{eq:none}
+多行公式：
+\begin{align}\label{eq:align}
 &I(X_3;X_4)-I(X_3;X_4\mid{}X_1)-I(X_3;X_4\mid{}X_2)\nonumber\\
 =&[I(X_3;X_4)-I(X_3;X_4\mid{}X_1)]-I(X_3;X_4\mid{}\tilde{X}_2)\\
 =&I(X_1;X_3;X_4)-I(X_3;X_4\mid{}\tilde{X}_2)
 \end{align}
-\zhlipsum[6-8][name=simp]
 
-\bisubsection{豆在釜中泣}{\pinyin{dou4zai4fu3zhong1qi4}}
+方程组：
+\begin{align}
+\begin{cases}
+\ u_{tt}(x,t)= b(t)\triangle u(x,t-4)&\\
+\ \hspace{42pt}- q(x,t)f[u(x,t-3)]+te^{-t}\sin^2 x,  &  t \neq t_k; \\
+\ u(x,t_k^+) - u(x,t_k^-) = c_k u(x,t_k), & k=1,2,3\ldots ;\\
+\ u_{t}(x,t_k^+) - u_{t}(x,t_k^-) =c_k u_{t}(x,t_k), &
+k=1,2,3\ldots\ .
+\end{cases}
+\end{align}
 
-\zhlipsum[2-3][name=simp]
+\bisubsection{图表示例}{Figures and tables}
+插图应与文字紧密配合，文图相符，内容正确。选图要力求精练。
 
-\begin{figure}[!htp]
+机械工程图：采用第一角投影法，严格按照GB4457--GB131-83《机械制图》标准规定。
+
+电气图：图形符号、文字符号等应符合\cref{app:codes}~所列有关标准的规定。
+
+流程图：原则上应采用结构化程序并正确运用流程框图。
+
+对无规定符号的图形应采用该行业的常用画法。
+
+每个图均应有图题（由图号和图名组成）。图号按章编排，如第1章第一个插图的图号为“图 1-1”等。图题置于图下，用中、英文两种文字居中书写，中文在上，要求用5号字。有图注或其它说明时应置于图题之上。图名在图号之后空一格排写。引用图应注明出处，在图题右上角加引用文献号 。图中若有分图时，分图题置于分图之下，分图号用a)、b)等表示。图中各部分说明应采用中文（引用的外文图除外）或数字项号，各项文字说明置于图题之上（有分图题者，置于分图题之上）。
+
+\begin{figure}[htbp]
 	\centering
-	\resizebox{10cm}{!}{\input{fig/flow_chart.tex}}
+	{\input{fig/flow_chart.tex}}
 	\bicaption{绘制流程图效果}{Sample Flow Chart}
 	\label{fig:flow_chart}
 \end{figure}
 
-\bisubsection{本是同根生}{ben shi tong gen sheng}
-\zhlipsum[1-3][name=simp]
+插入表格。表的编排建议采用国际通行的三线表即顶线、底线和栏目线 注意：没有竖线 。其中顶线和底线为0.75pt粗线，栏目线为0.5pt细线，排版三线表必要时可加辅助线，三线表的组成要素包括：表序、表题、项目栏、表体、表注。表头设计应简单明了，尽量不用斜线。表头中可采用化学符号或物理量符号。
 
-\subsubsection{款标题}
-款、项标题小4号楷体，题序顶格书写，与标题间空一格，下面阐述内容在标题后空一格接排。
+每个表格均应有表题（由表序和表名组成）。表序一般按章编排，如第1章第一个插表的序号为 “表 1-1”等。表序与表名之间空一格，表名中不允 许使用标点符号，表名后不加标点。表题置于表上，用中、英文两种文字居中排写，中文在上，要求用5号字。
 
+全表如用同一单位，则将单位符号移至表头右上角，加圆括号。
+
+表中数据应准确无误，书写清楚。数字空缺的格内加横线“—”（占2个数字宽度）。表内文字或数字上、下或左、右相同时，采用通栏处理方式，不允许用$ '' $、同上之类的写法。
+
+表内文字说明，起行空一格、转行顶格、句末不加标点。
 \begin{table}[!hpb]
 	\centering
 	\bicaption[指向一个表格的表目录索引]
@@ -87,55 +163,3 @@
 		\end{tablenotes}
 	\end{threeparttable}
 \end{table}
-
-\bisubsection{相煎何太急}{xiang jian he tai ji}
-\zhlipsum[1-3][name=simp]
-
-模板中定义了丰富的定理环境
-algo(算法)，thm(定理)，lem(引理)，prop(命题)，cor(推论)，defn(定义)，conj(猜想)，exmp(例)，rem(注)，case(情形)，
-bthm(断言定理)，blem(断言引理)，bprop(断言命题)，bcor(断言推论)。
-amsmath还提供了一个proof(证明)的环境。
-这里举一个“定理”和“证明”的例子。
-
-%\begin{theorem}[留数定理]
-%	\label{thm:res}
-	假设$U$是复平面上的一个单连通开子集，$a_1,\ldots,a_n$是复平面上有限个点，$f$是定义在$U\backslash\{a_1,\ldots,a_n\}$上的全纯函数，
-	如果$\gamma$是一条把$a_1,\ldots,a_n$包围起来的可求长曲线，但不经过任何一个$a_k$，并且其起点与终点重合，那么：
-	
-	\begin{equation}
-	\label{eq:res}
-	\ointop_{\gamma}f(z)\,\mathrm{d}z=2\uppi\mathbf{i}\sum^n_{k=1}\mathrm{I}(\gamma,a_k)\mathrm{Res}(f,a_k)
-	\end{equation}
-	
-	如果$\gamma$是若尔当曲线，那么$\mathrm{I}(\gamma,a_k)=1$，因此：
-	
-	\begin{equation}
-	\label{eq:resthm}
-	\ointop_{\gamma}f(z)\,\mathrm{d}z=2\uppi\mathbf{i}\sum^n_{k=1}\mathrm{Res}(f,a_k)
-	\end{equation}
-	
-	%\oint_\gammaf(z)\,dz=2\pii\sum_{k=1}^n\mathrm{Res}(f,a_k).
-	
-	在这里，$\mathrm{Res}(f,a_k)$表示$f$在点$a_k$的留数，$\mathrm{I}(\gamma,a_k)$表示$\gamma$关于点$a_k$的卷绕数。
-	卷绕数是一个整数，它描述了曲线$\gamma$绕过点$a_k$的次数。如果$\gamma$依逆时针方向绕着$a_k$移动，卷绕数就是一个正数，
-	如果$\gamma$根本不绕过$a_k$，卷绕数就是零。
-	
-	定理的证明。
-	
-%	\begin{proof}
-%		首先，由……
-%		
-%		其次，……
-%		
-%		所以……
-%	\end{proof}
-%\end{theorem}
-
-\bisection{一岁一枯荣}{yi sui yi ku rong}
-\zhlipsum[6-20][name=zhufu]
-
-\bisection{野火烧不尽}{ye huo shao bu jin}
-\zhlipsum[21-40][name=zhufu]
-
-\bisection{春风吹又生}{chun feng chui you sheng}
-\zhlipsum[41-70][name=zhufu]

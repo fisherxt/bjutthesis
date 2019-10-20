@@ -10,8 +10,7 @@
 
 %% ==== basics
 \LoadClass[UTF8, scheme=plain, zihao=-4, linespread=1.56]{ctexbook}
-\RequirePackage{bjutthesis}
-
+\input{bjutthesis.cfg}
 \ctexset {%
   punct      = quanjiao,
   space      = auto,
@@ -104,7 +103,7 @@
   breaklinks         = true,
   colorlinks         = false,
   plainpages         = false,
-  pdfborder          = 0 0 0 }
+  pdfborder          = 0 0 0  }
 \urlstyle{same}
 
 %% ==== eqs, figs and tabs
@@ -158,20 +157,16 @@
 % ==== cover, titlepage and statementpage
 \newcommand{\makecover}{%
   \bjut@cover
-  \global\let\makecover\relax
-}
+  \global\let\makecover\relax  }
 \renewcommand{\maketitle}{%
   \bjut@ctitlepage
-  \global\let\maketitle\relax
-}
+  \global\let\maketitle\relax  }
 \newcommand\makeetitle{%
   \bjut@etitlepage
-  \let\makeetitle\relax
-}
+  \let\makeetitle\relax  }
 \newcommand{\makestate}{%
   \bjut@statepage
-  \global\let\makestate\relax
-}
+  \global\let\makestate\relax  }
 
 \AtEndPreamble{%
   \pgfplotsset{compat=1.16} }
