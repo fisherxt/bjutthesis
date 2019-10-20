@@ -10,7 +10,7 @@
 
 %% ==== basics
 \LoadClass[UTF8, scheme=plain, zihao=-4, linespread=1.56]{ctexbook}
-\input{bjutthesis.cfg}
+\input{./cls/bjutthesis.cfg}
 \ctexset {%
   punct      = quanjiao,
   space      = auto,
