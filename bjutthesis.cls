@@ -2,7 +2,7 @@
 \ProvidesClass{bjutthesis}[2019/09/16 2.7 Thesis Template]
 
 \RequirePackage{xparse}
-\RequirePackage{ezinfo}
+\RequirePackage{./cls/ezinfo}
 
 %% Template MACROs
 \DeclareRobustCommand{\bjutthesis}{ {\rmfamily B\textsc{\kern-.1emj\kern-.025emu\kern-.02emt}\kern-.08emT\kern-.1667em\lower.475ex\hbox{H}\kern-.0667emE\kern-.0667em\lower.475ex\hbox{S}\kern-.05emI\kern-.0667em\lower.475ex\hbox{S}} }
@@ -126,7 +126,7 @@
 \renewcommand{\thetable}{\thechapter-\arabic{table}}
 
 %% ==== table of contents
-\RequirePackage{bitoc}
+\RequirePackage{./cls/bitoc}
 \RequirePackage[titles]{tocloft}
 \setcounter{tocdepth}{2}
 % -- pagestyle
