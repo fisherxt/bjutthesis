@@ -5,7 +5,7 @@
 \RequirePackage{./cls/ezinfo}
 
 %% Template MACROs
-\DeclareRobustCommand{\bjutthesis}{ {\rmfamily B\textsc{\kern-.1emj\kern-.025emu\kern-.02emt}\kern-.08emT\kern-.1667em\lower.475ex\hbox{H}\kern-.0667emE\kern-.0667em\lower.475ex\hbox{S}\kern-.05emI\kern-.0667em\lower.475ex\hbox{S}} }
+\DeclareRobustCommand{\bjutthesis}{  {\rmfamily B\textsc{\kern-.1emj\kern-.025emu\kern-.02emt}\kern-.08emT\kern-.1667em\lower.475ex\hbox{H}\kern-.0667emE\kern-.0667em\lower.475ex\hbox{S}\kern-.05emI\kern-.0667em\lower.475ex\hbox{S}}  }
 \def\version{ver.\,2.7}
 
 %% ==== basics
@@ -92,6 +92,24 @@
   \@mainmatterfalse
   \pagestyle{bjut@headings}  }
 
+%% ==== eqs, figs and tabs
+\RequirePackage{amsmath, mathtools, upgreek}             % eqs
+\RequirePackage{graphicx, xcolor, tikz, pgfplots}        % figs
+\RequirePackage{threeparttable, booktabs, longtable, multirow, dcolumn}  % tabs
+
+%% ==== bicaption
+\RequirePackage{caption}
+\RequirePackage{subcaption}
+\RequirePackage[list=off]{bicaption}
+% -- bicaption setup
+\captionsetup{font=small}
+\captionsetup[figure]{labelsep=space}
+\captionsetup[figure][bi-first]{name=图}
+\captionsetup[figure][bi-second]{name=Fig.}
+\captionsetup[table]{labelsep=space}
+\captionsetup[table][bi-first]{name=表}
+\captionsetup[table][bi-second]{name=Tab.}
+
 %% ==== cross references
 \RequirePackage{hyperref}
 \RequirePackage{cleveref}
@@ -103,19 +121,14 @@
   breaklinks         = true,
   colorlinks         = false,
   plainpages         = false,
-  pdfborder          = 0 0 0  }
+  pdfborder          = 0 0 0}
 \urlstyle{same}
-
-%% ==== eqs, figs and tabs
-\RequirePackage{amsmath, mathtools, upgreek}             % eqs
-\RequirePackage{graphicx, xcolor, tikz, pgfplots}        % figs
-\RequirePackage{threeparttable, booktabs, longtable, multirow, dcolumn}  % tabs
 
 %% ==== itemize and enumerate
 \RequirePackage[shortlabels]{enumitem}
 \setlist[itemize]{wide=2\ccwd}
-\setlist[enumerate]{label=（\arabic*）, wide=2\ccwd, labelsep=0pt}
-\setlist[enumerate,2]{label=\arabic*）, wide=4\ccwd, labelsep=0pt, leftmargin=2\ccwd}
+\setlist[enumerate]{label=(\arabic*), wide=2\ccwd, labelsep=.5\ccwd}
+\setlist[enumerate,2]{label=\arabic*), wide=4\ccwd, labelsep=.5\ccwd, leftmargin=2\ccwd}
 \setlist[description]{wide=2\ccwd}
 \setlist{nosep}
 

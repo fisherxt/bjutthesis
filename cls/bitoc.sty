@@ -12,14 +12,14 @@
       \markboth{\MakeUppercase#3}{}
       \addcontentsline{toc}{chapter}{#2#3} 
       \addcontentsline{toe}{chapter}{\bfseries#4} } 
-	{ \chapter{#3}
+    { \chapter{#3}
       \addcontentsline{toe}{chapter}{\bfseries\echaptername~\thechapter~~#4}  }  }
 \NewDocumentCommand{\bisection} {mm} {%
-	\section{#1}
-	\addcontentsline{toe}{section}{\thesection~~#2}  }
+    \section{#1}
+    \addcontentsline{toe}{section}{\thesection~~#2}  }
 \NewDocumentCommand{\bisubsection} {mm} {%
-	\subsection{#1}
-	\addcontentsline{toe}{subsection}{\thesubsection~~#2}  }
+    \subsection{#1}
+    \addcontentsline{toe}{subsection}{\thesubsection~~#2}  }
 
 %% ==== NEW Environments
 % ==== Abstract Environment
@@ -28,17 +28,17 @@
 \newcommand\ckeywords{\par\vspace{12pt}\noindent{\zihao{-4}\heiti 关键词：}\relax}
 \newcommand\ekeywords{\par\vspace{12pt}\noindent{\zihao{-4}\bfseries Keywords:~}\relax}
 \NewDocumentEnvironment{cabstract}{}{%
-	\bichapter*{\cabstractname}{\eabstractname~(in Chinese)}
+    \bichapter*{\cabstractname}{\eabstractname~(in Chinese)}
 }{}
 \NewDocumentEnvironment{eabstract}{}{%
-	\bichapter*[\bfseries]{\eabstractname}{\eabstractname}
+    \bichapter*[\bfseries]{\eabstractname}{\eabstractname}
 }{}
 
 % ==== Conclusions Environment
 \newcommand\cconcltitle{结论与展望}
 \newcommand\econcltitle{Conclusions}
 \NewDocumentEnvironment{conclusion}{}{%
-	\bichapter*{\cconcltitle}{\econcltitle}
+    \bichapter*{\cconcltitle}{\econcltitle}
 }{}
 
 % ==== Bibliography in Bilingual ToC
@@ -46,32 +46,32 @@
 \newcommand{\ebibname}{Reference}
 \renewcommand\bibname\cbibname
 \NewDocumentCommand{\makebib}{m}{
-	\bibliography{#1}
-	\addcontentsline{toc}{chapter}{\bibname}
-	\addcontentsline{toe}{chapter}{\bfseries\ebibname}  }
+    \bibliography{#1}
+    \addcontentsline{toc}{chapter}{\bibname}
+    \addcontentsline{toe}{chapter}{\bfseries\ebibname}  }
 
 % ==== Appendix Environment
 \newcommand{\cappendixname}{附录}
 \newcommand{\eappendixname}{Appendix}
 \renewcommand{\appendixname}{\cappendixname}
 \NewDocumentCommand{\biappendix} {mm} {%
-	\ctexset{chapter/format=\bjut@chapter@font\raggedright}
-	\chapter{#1}
-	\ctexset{chapter/format=\bjut@chapter@font\centering}
-	\addcontentsline{toe}{chapter}{\bfseries\eappendixname~\thechapter~~#2}  }
+    \ctexset{chapter/format=\bjut@chapter@font\raggedright}
+    \chapter{#1}
+    \ctexset{chapter/format=\bjut@chapter@font\centering}
+    \addcontentsline{toe}{chapter}{\bfseries\eappendixname~\thechapter~~#2}  }
 
 % ==== Publication Environment
 \newcommand\cpubtitle{攻读博士学位期间所发表的学术论文}
 \newcommand\epubtitle{Publications}
 \NewDocumentEnvironment{publication}{}{%
-	\bichapter*{\cpubtitle}{\epubtitle}
+    \bichapter*{\cpubtitle}{\epubtitle}
 }{}
 
 % ==== Acknowledgement Environment
 \newcommand\cacktitle{致谢}
 \newcommand\eacktitle{Acknowledgement}
 \NewDocumentEnvironment{acknowledgement}{}{%
-	\bichapter*{\cacktitle}{\eacktitle}
+    \bichapter*{\cacktitle}{\eacktitle}
 }{}
 
 %% ==== Make Bilingual ToC
@@ -79,10 +79,10 @@
 \newcommand\econtentsname{Contents}
 \renewcommand\contentsname\ccontentsname
 \newcommand{\makebitoc}{%
-	{\zihao{-4}\linespread{1.56}\selectfont\tableofcontents}\normalsize
-	\addcontentsline{toc}{chapter}{\ccontentsname}
-	\addcontentsline{toe}{chapter}{\bfseries\econtentsname~(in Chinese)}
-	
-	\bichapter*[\bfseries]{\econtentsname}{\econtentsname}
-	{\zihao{-4}\linespread{1.56}\selectfont\@starttoc{toe}}\normalsize
+    {\zihao{-4}\linespread{1.56}\selectfont\tableofcontents}\normalsize
+    \addcontentsline{toc}{chapter}{\ccontentsname}
+    \addcontentsline{toe}{chapter}{\bfseries\econtentsname~(in Chinese)}
+    
+    \bichapter*[\bfseries]{\econtentsname}{\econtentsname}
+    {\zihao{-4}\linespread{1.56}\selectfont\@starttoc{toe}}\normalsize
 }
