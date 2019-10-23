@@ -1,37 +1,4 @@
-\usetikzlibrary{shapes.geometric, arrows}
-\tikzstyle{startstop} = [
-rectangle,
-rounded corners,
-minimum width=2cm,
-minimum height=1cm,
-text centered,
-draw=black
-]
-\tikzstyle{io} = [
-trapezium,
-trapezium left angle=75,
-trapezium right angle=105,
-minimum width=1cm,
-minimum height=1cm,
-text centered,
-draw=black
-]
-\tikzstyle{process} = [
-rectangle,
-minimum width=2cm,
-minimum height=1cm,
-text centered,
-draw=black
-]
-\tikzstyle{decision} = [
-diamond,
-minimum width=2cm,
-minimum height=1cm,
-text centered,
-draw=black]
-\tikzstyle{arrow} = [thick, ->, >=stealth]
-
-\begin{tikzpicture}[node distance=2cm]
+\begin{tikzpicture}[node distance=1.5cm]
     \node (pic) [startstop] {待测图片};
     \node (bg) [io, below of=pic] {读取背景};
     \node (pair) [process, below of=bg] {匹配特征点对};

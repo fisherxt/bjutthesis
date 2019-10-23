@@ -1,0 +1,91 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{bitoc}[2019/10/01 bilingual tableofcontents for bjutthesis]
+
+\usepackage{xparse}
+
+\def\cabstractname{摘要}
+\def\ccontentsname{目录}
+\def\cconclusionname{结论与展望}
+\def\cbibname{参考文献}
+\def\cappendixname{附录}
+\def\cpubname{攻读博士学位期间所发表的学术论文}
+\def\cackname{致谢}
+\def\eabstractname{Abstract}
+\def\econtentsname{Contents}
+\def\echaptername{Chapter}
+\def\econclusionname{Conclusions}
+\def\ebibname{Reference}
+\def\eappendixname{Appendix}
+\def\epubname{Publications}
+\def\eackname{Acknowledgement}
+
+%% NEW Commands
+\NewDocumentCommand{\bichapter} {sO{}mm} {% 
+  % O{} or #2 for set font of English chap entries in Chinese ToC with header normalfont
+  \IfBooleanTF{#1}
+    { \chapter*{#2#3}
+      \markboth{\MakeUppercase#3}{}
+      \addcontentsline{toc}{chapter}{#2#3} 
+      \addcontentsline{toe}{chapter}{\bfseries#4} } 
+    { \chapter{#3}
+      \addcontentsline{toe}{chapter}{\bfseries\echaptername~\thechapter~~#4} } }
+\NewDocumentCommand{\bisection} {mm} {%
+    \section{#1}
+    \addcontentsline{toe}{section}{\thesection~~#2} }
+\NewDocumentCommand{\bisubsection} {mm} {%
+    \subsection{#1}
+    \addcontentsline{toe}{subsection}{\thesubsection~~#2} }
+\renewcommand{\appendixname}{\cappendixname}
+\NewDocumentCommand{\biappendix} {mm} {%
+    \ctexset{chapter/format=\bjut@chapter@font\raggedright}
+    \chapter{#1}
+    \ctexset{chapter/format=\bjut@chapter@font\centering}
+    \addcontentsline{toe}{chapter}{\bfseries\eappendixname~\thechapter~~#2} }
+
+%% ==== NEW Environments
+% ==== Abstract Environment
+\newcommand\ckeywords{%
+    \par
+    \vspace{12pt}
+    \noindent{\zihao{-4}\heiti 关键词：}\relax }
+\newcommand\ekeywords{%
+    \par
+    \vspace{12pt}
+    \noindent{\zihao{-4}\bfseries Keywords:~}\relax }
+\NewDocumentEnvironment{cabstract}{}{%
+    \bichapter*{\cabstractname}{\eabstractname~(in Chinese)}
+}{\relax}
+\NewDocumentEnvironment{eabstract}{}{%
+    \bichapter*[\bfseries]{\eabstractname}{\eabstractname}
+}{\relax}
+
+% ==== Conclusions Environment
+\NewDocumentEnvironment{conclusion}{}{%
+    \bichapter*{\cconclusionname}{\econclusionname}
+}{\relax}
+
+% ==== Bibliography in Bilingual ToC
+\renewcommand\bibname\cbibname
+\NewDocumentCommand{\makebib}{m}{
+    \bibliography{#1}
+    \addcontentsline{toc}{chapter}{\bibname}
+    \addcontentsline{toe}{chapter}{\bfseries\ebibname} }
+
+% ==== Publication Environment
+\NewDocumentEnvironment{publication}{}{%
+    \bichapter*{\cpubname}{\epubname}
+}{\relax}
+
+% ==== Acknowledgement Environment
+\NewDocumentEnvironment{acknowledgement}{}{%
+    \bichapter*{\cackname}{\eackname}
+}{\relax}
+
+%% ==== Make Bilingual ToC
+\renewcommand\contentsname\ccontentsname
+\newcommand{\makebitoc}{%
+    {\zihao{-4}\linespread{1.53}\selectfont\tableofcontents}\normalsize
+    \addcontentsline{toc}{chapter}{\ccontentsname}
+    \addcontentsline{toe}{chapter}{\bfseries\econtentsname~(in Chinese)}    
+    \bichapter*[\bfseries]{\econtentsname}{\econtentsname}
+    {\zihao{-4}\linespread{1.53}\selectfont\@starttoc{toe}}\normalsize }

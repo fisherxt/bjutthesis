@@ -2,7 +2,12 @@
 %-*- coding: UTF-8 -*-
 \documentclass[no-math]{bjutthesis} 
 \usepackage{lipsum, zhlipsum}    % for test use
-% \usepackage{layout, showframe} % for test use
+\usepackage{layout, showframe}   % for test use
+
+% == commonly used packages regarding eqs, figs and tabs
+\usepackage{amsmath, mathtools, upgreek}
+\usepackage{graphicx, tikz, pgfplots}
+\usepackage{threeparttable, booktabs, longtable, multirow, dcolumn}
 
 \bjutset {%
   clc            = {TU311},      % 中文图书分类号
@@ -22,23 +27,21 @@
   cdate          = {\the\year~年\the\month~月},
   corganization  = {北京工业大学},
   % -- 英文信息
-  etitle         = {\bjutthesis: \LaTeX-based Template for Doctral Dissertation of Beijing University of Technology},
+  etitle         = {\bjutthesis: \LaTeX-based Template for Doctoral Dissertation of Beijing University of Technology},
   edegree        = {Doctor of Engineering},
   emajor         = {Basketball},
   eauthor        = {YAO Ming},
   esupervisor    = {DU Xiuli},
   ecollege       = {College of Architecture and Civil Engineering},
-  edate          = {\today}
-}
+  edate          = {\today} }
 
 \begin{document}
 \makecover                          % -- 封面
-\maketitle                          % -- 内封    
-\makeetitle                         % -- 内封（英文）           
+\maketitle                          % -- 内封（中、英文）           
 \makestate                          % -- 声明页
 \frontmatter                        %% ==== 前页 ====
 \include{./tex/abstract}            % -- 摘要，关键词
-\makebitoc                          % -- 中英文目录
+\makebitoc                          % -- 目录（中、英文）
 \mainmatter                         %% ==== 正文 ====
 \include{./tex/chapter01}           % -- 第1,2,...章
 \include{./tex/chapter02}           % -- 
