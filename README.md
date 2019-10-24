@@ -16,12 +16,12 @@
 
 目前测试通过的平台：
 
--  Windows 7/10 ，TeXLive 2018/2019 发行版；
-- MacOS 10.13.6，MacTeX 2019.
+-  Windows 7/10 ，TeXLive 2018/2019;
+-  MacOS 10.13.6，MacTeX 2019.
 
 ## 更新日志
 
-- `20191024`加入MacOS适配。
+- `20191024` 加入MacOS适配。
 
 ## 致谢
 

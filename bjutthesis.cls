@@ -86,9 +86,9 @@
 \RequirePackage{ifthen}
 \newcommand\bjut@fontset{\csname g__ctex_fontset_tl\endcsname}
 \ifthenelse{\equal{\bjut@fontset}{windows}}{%
-  \newCJKfontfamily\bjut@kaishu[AutoFakeBold]{KaiTi}
-  \newCJKfontfamily\bjut@songti[AutoFakeBold]{SimSun}
-  \newCJKfontfamily\bjut@fangsong[AutoFakeBold]{FangSong} } {%
+  \newCJKfontfamily\bjut@kaishu[AutoFakeBold=1.75]{KaiTi}
+  \newCJKfontfamily\bjut@songti[AutoFakeBold=1.75]{SimSun}
+  \newCJKfontfamily\bjut@fangsong[AutoFakeBold=1.75]{FangSong} } {%
   \ifthenelse{\equal{\bjut@fontset}{mac}}{%
   	\setCJKfamilyfont{zhhei}{Heiti SC Medium}
   	\newCJKfontfamily\bjut@songti[AutoFakeBold=1.75]{Songti SC}
@@ -336,7 +336,7 @@
           \makebox[4cm][s]{\zihao{3}\heiti 独创性声明}  
       \end{center}
       {\justifying
-          \hspace{2\ccwd}本人声明所呈交的论文是我个人在导师指导下进行的研究工作及取得的研究成果。尽我所知，除了文中特别加以标注和致谢的地方外，论文中不包含其他人已经发表或撰写过的研究成果，\kern-.1em也不包含为获得北京工业大学或其它教育机构的学位或证书而使用过的材料。\kern-.2em与我一同工作的同志对本研究所做的任何贡献均已在论文中作了明确的说明并表示了谢意。}
+          \hspace{2\ccwd}本人声明所呈交的论文是我个人在导师指导下进行的研究工作及取得的研究成果。尽我所知，除了文中特别加以标注和致谢的地方外，论文中不包含其他人已经发表或撰写过的研究成果，\kern-.2em也不包含为获得北京工业大学或其它教育机构的学位或证书而使用过的材料。\kern-.2em与我一同工作的同志对本研究所做的任何贡献均已在论文中作了明确的说明并表示了谢意。}
       \begin{flushright}
           \renewcommand\arraystretch{1.75}
           \setlength\tabcolsep{0pt}

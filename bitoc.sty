@@ -42,6 +42,22 @@
     \ctexset{chapter/format=\bjut@chapter@font\centering}
     \addcontentsline{toe}{chapter}{\bfseries\eappendixname~\thechapter~~#2} }
 
+% ==== Add Reference chapter to ToC
+\renewcommand\bibname\cbibname
+\NewDocumentCommand{\makebib}{m}{
+    \bibliography{#1}
+    \addcontentsline{toc}{chapter}{\bibname}
+    \addcontentsline{toe}{chapter}{\bfseries\ebibname} }
+
+%% ==== Make Bilingual ToC
+\renewcommand\contentsname\ccontentsname
+\newcommand{\makebitoc}{%
+    {\zihao{-4}\linespread{1.53}\selectfont\tableofcontents}\normalsize
+    \addcontentsline{toc}{chapter}{\ccontentsname}
+    \addcontentsline{toe}{chapter}{\bfseries\econtentsname~(in Chinese)}    
+    \bichapter*[\bfseries]{\econtentsname}{\econtentsname}
+    {\zihao{-4}\linespread{1.53}\selectfont\@starttoc{toe}}\normalsize }
+
 %% ==== NEW Environments
 % ==== Abstract Environment
 \newcommand\ckeywords{%
@@ -64,13 +80,6 @@
     \bichapter*{\cconclusionname}{\econclusionname}
 }{\relax}
 
-% ==== Bibliography in Bilingual ToC
-\renewcommand\bibname\cbibname
-\NewDocumentCommand{\makebib}{m}{
-    \bibliography{#1}
-    \addcontentsline{toc}{chapter}{\bibname}
-    \addcontentsline{toe}{chapter}{\bfseries\ebibname} }
-
 % ==== Publication Environment
 \NewDocumentEnvironment{publication}{}{%
     \bichapter*{\cpubname}{\epubname}
@@ -80,12 +89,3 @@
 \NewDocumentEnvironment{acknowledgement}{}{%
     \bichapter*{\cackname}{\eackname}
 }{\relax}
-
-%% ==== Make Bilingual ToC
-\renewcommand\contentsname\ccontentsname
-\newcommand{\makebitoc}{%
-    {\zihao{-4}\linespread{1.53}\selectfont\tableofcontents}\normalsize
-    \addcontentsline{toc}{chapter}{\ccontentsname}
-    \addcontentsline{toe}{chapter}{\bfseries\econtentsname~(in Chinese)}    
-    \bichapter*[\bfseries]{\econtentsname}{\econtentsname}
-    {\zihao{-4}\linespread{1.53}\selectfont\@starttoc{toe}}\normalsize }
