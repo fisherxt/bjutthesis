@@ -1,7 +1,7 @@
 %!TEX program = xelatex
 %-*- coding: UTF-8 -*-
-\documentclass[no-math]{bjutthesis} 
-\usepackage{lipsum, zhlipsum}    % for test use
+\documentclass[no-math, ]{bjutthesis} 
+\usepackage{lipsum, zhlipsum, fancyvrb}    % for test use
 %\usepackage{layout, showframe}   % for test use
 
 % == commonly used packages regarding eqs, figs and tabs
@@ -9,14 +9,15 @@
 \usepackage{graphicx, tikz, pgfplots}
 \usepackage{threeparttable, booktabs, longtable, multirow, dcolumn}
 
+% == input
 \bjutset {%
   clc            = {TU311},      % 中文图书分类号
   udc            = {004},        % 十进制分类号
   schoolcode     = {10005},      % 学校编号
-  secretlevel    = {公开},       % 密级
+  secretlevel    = {公开},        % 密级
   studentid      = {B200004000}, % 学号
   % -- 中文信息
-  ctitle         = {\bjutthesis\,\version\,——北京工业大学博士学位论文\LaTeX 模板},
+  ctitle         = {\bjutthesis\,\version\,——北京工业大学博士学位论文{\LaTeX}模板},
   cauthor        = {姚明}, 
   cdiscipline    = {体育学},     % 学科  
   cmajor         = {职业篮球},   % 研究方向
@@ -46,7 +47,7 @@
 \include{./tex/chapter01}           % -- 第1,2,...章
 \include{./tex/chapter02}           % -- 
 \include{./tex/conclusion}          % -- 结论
-\makebib{./ref/reference}           % -- 参考文献，GB/T-7714(2015)
+\makebib{./ref/reference}           % -- 参考文献，GB/T7714-2015
 \appendix                           %% ==== 附录 ====
 \include{./tex/appendix_a}          % -- 附录A,B,...
 \include{./tex/appendix_b}          % --

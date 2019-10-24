@@ -1,6 +1,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{bjutthesis}[2019/09/16 2.7 Thesis Template]
 
+%% ==== VeryDependent Packages
+\RequirePackage{xparse}
+\RequirePackage{ezinfo}
+
 %% ==== Basic
 \LoadClass[UTF8, scheme=plain, zihao=-4, linespread=1.42, sub3section]{ctexbook}
 \ctexset {%
@@ -9,24 +13,13 @@
     autoindent = true,
     today      = old }
 
-%% ==== VeryDependent Packages and Info
-\RequirePackage{xparse}
-\RequirePackage{ezinfo}
-
 %% ==== Template MACROs
 \DeclareRobustCommand{\bjutthesis}{  {\rmfamily B\textsc{\kern-.1emj\kern-.025emu\kern-.02emt}\kern-.08emT\kern-.1667em\lower.475ex\hbox{H}\kern-.0667emE\kern-.0667em\lower.475ex\hbox{S}\kern-.05emI\kern-.0667em\lower.475ex\hbox{S}}  }
 \def\version{ver.\,2.7}
 % -- theme color
 \RequirePackage{xcolor}
-\definecolor{bjut@blue}{RGB}{0,150,195}               % official color of badge and logos
-\definecolor{bjut@color@doctorcover}{RGB}{186,15,43}  % cover color
-% -- bold Chinese fonts (Windows)
-\newCJKfontfamily\bjut@kaishu[AutoFakeBold]{KaiTi}
-\newCJKfontfamily\bjut@songti[AutoFakeBold]{SimSun}
-\newCJKfontfamily\bjut@fangsong[AutoFakeBold]{FangSong}
-\newcommand\textbfkai[1]{{\bfseries\bjut@kaishu #1}}
-\newcommand\textbfsong[1]{{\bfseries\bjut@songti #1}}
-\newcommand\textbffs[1]{{\bfseries\bjut@fangsong #1}}
+\definecolor{bjut@color@official}{RGB}{0,150,195}
+\definecolor{bjut@color@doctorcover}{RGB}{186,15,43}
 
 %% ==== format: FiveLevel-structured 
 \setcounter{secnumdepth}{4}
@@ -83,11 +76,30 @@
     aftername    = {},
     aftertitle   = \hspace{\ccwd} } }
 
-%% ==== set fonts, times new roman
+%% ==== fonts
+% -- times new roman
 \RequirePackage[T1]{fontenc}
 \PassOptionsToPackage{no-math}{fontspec}
 \RequirePackage[defaultsups]{newtxtext}
 \RequirePackage{newtxmath}
+% -- bold Chinese fonts
+\RequirePackage{ifthen}
+\newcommand\bjut@fontset{\csname g__ctex_fontset_tl\endcsname}
+\ifthenelse{\equal{\bjut@fontset}{windows}}{%
+  \newCJKfontfamily\bjut@kaishu[AutoFakeBold]{KaiTi}
+  \newCJKfontfamily\bjut@songti[AutoFakeBold]{SimSun}
+  \newCJKfontfamily\bjut@fangsong[AutoFakeBold]{FangSong} } {%
+  \ifthenelse{\equal{\bjut@fontset}{mac}}{%
+  	\setCJKfamilyfont{zhhei}{Heiti SC Medium}
+  	\newCJKfontfamily\bjut@songti[AutoFakeBold=1.75]{Songti SC}
+  	\newCJKfontfamily\bjut@kaishu[AutoFakeBold=1.75]{Kaiti SC}
+  	\newCJKfontfamily\bjut@fangsong[AutoFakeBold=1.75]{STFangsong} } {%
+    \let\bjut@kaishu\kaishu
+    \let\bjut@songti\songti
+    \let\bjut@fangson\fangsong } }
+\newcommand\textbfkai[1]{{\bfseries\bjut@kaishu #1}}
+\newcommand\textbfsong[1]{{\bfseries\bjut@songti #1}}
+\newcommand\textbffs[1]{{\bfseries\bjut@fangsong #1}}
 
 %% ==== layout
 \RequirePackage{geometry}
