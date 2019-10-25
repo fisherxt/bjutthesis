@@ -143,10 +143,11 @@
   \@mainmatterfalse
   \pagestyle{bjut@headings} }
 
-%% ==== eqs, figs and tabs
-\RequirePackage{amsmath, mathtools, upgreek}                             % eqs
-\RequirePackage{graphicx, xcolor, tikz, pgfplots}                        % figs
-\RequirePackage{threeparttable, booktabs, longtable, tabularx, multirow, dcolumn}  % tabs
+%% ==== numbering
+\renewcommand{\theparagraph}{(\arabic{paragraph})}
+\renewcommand{\theequation}{\thechapter-\arabic{equation}}
+\renewcommand{\thefigure}{\thechapter-\arabic{figure}}
+\renewcommand{\thetable}{\thechapter-\arabic{table}}
 
 %% ==== bicaption
 \RequirePackage{caption}
@@ -182,12 +183,6 @@
 \setlist[enumerate,2]{label=\arabic*), wide=4\ccwd, labelsep=.5\ccwd, leftmargin=2\ccwd}
 \setlist[description]{wide=2\ccwd}
 \setlist{nosep} % no extra vertical space
-
-%% ==== numbering
-\renewcommand{\theparagraph}{(\arabic{paragraph})}
-\renewcommand{\theequation}{\thechapter-\arabic{equation}}
-\renewcommand{\thefigure}{\thechapter-\arabic{figure}}
-\renewcommand{\thetable}{\thechapter-\arabic{table}}
 
 %% ==== table of contents
 \RequirePackage{bitoc}
@@ -262,8 +257,7 @@
   \end{titlepage}
   \restoregeometry
   \nopagecolor
-  \global\let\makecover\relax
-}
+  \global\let\makecover\relax }
 \renewcommand{\maketitle}{%
   % -- Chinese 
   \begin{titlepage}
@@ -326,8 +320,7 @@
       \end{center}
       \vfill
   \end{titlepage}
-  \global\let\maketitle\relax
-}
+  \global\let\maketitle\relax }
 \newcommand{\makestate}{%
   \begin{titlepage}
       \mbox{}
@@ -363,8 +356,7 @@
       \end{flushright}
       \vfill  
   \end{titlepage}
-  \global\let\makestate\relax
-}
+  \global\let\makestate\relax }
 
 \AtEndPreamble{%
   \pgfplotsset{compat=1.16} }
