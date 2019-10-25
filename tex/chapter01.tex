@@ -49,7 +49,7 @@
 \end{center}
 输入的双语标题会自动列入双语目录中。此外，\verb|bitoc|宏包定义了中、英文摘要、结论章、参考文献、论文成果和致谢环境，无需手动输入中英文标题，相应环境的中英文标题会自动列入双语目录。
 
-\bisection{章节版式}{Format settings}
+\bisection{章节版式}{Format settings}\label{sec:fm}
 依据撰写规范，论文正文内容宜分章、节、条、款、项五级，前三级列入目录。各级标题格式示例如下。章标题，三号黑体居中。
 
 \bisection{离离原上草}{li li yuan shang cao}\label{sec:llysc}
@@ -65,7 +65,7 @@
 
 正文小四号宋体，1.3倍行距。段首缩进两字符。
 
-\bisection{示例}{examples}
+\bisection{示例}{examples}\label{sec:ex}
 \bisubsection{引用示例}{Cross reference examples}
 模板中的文献处理使用\verb|gbt7714|宏包，其文献格式排版遵循国标GB/T7714-2015。\verb|gbt7714|宏包的文献引用依赖于\verb|natbib|宏包，且已默认加载，无需额外命令加载\verb|natbib|宏包，引用命令也与\verb|natbib|宏包一致。模板开启了压缩文献编号选项，如遇编号连续的多篇文献会自动使用连字符压缩序号，仅保留首尾序号。
 
@@ -73,9 +73,13 @@
 
 文献普通引用\cite{同鸣2012}，文献叙述引用\citet{Boutsidis2011}，多组文献引用\cite{同鸣2012, Lee1999, Tang2013, Ding2006Orthogonal}。
 
-章节引用\cref{chap:intro}章节引用\cref{sec:llysc}章节引用\cref{ssec:ysykr}章节引用\cref{sssec:yhsbj}。
+章节引用\cref{chap:intro}测试。两个章节引用\cref{sec:llysc,sec:ex}测试。多个章节引用\cref{sec:llysc,sec:ex,sec:fm}测试。章节引用\cref{ssec:ysykr}章节引用\cref{sssec:yhsbj}。
 
-公式引用\cref{eq:long}图引用\cref{fig:flow_chart}表引用\cref{tab:firstone}。
+公式引用\cref{eq:long,eq:norm,eq:align}测试。
+
+图引用\cref{fig:flow_chart}测试，两图\cref{fig:test,fig:test2}测试，连续多图\cref{fig:flow_chart,fig:test,fig:test2}测试，连续多图\cref{fig:flow_chart,fig:test,fig:test3}测试
+
+表引用\cref{tab:1st,tab:footnote}。
 
 \bisubsection{公式示例}{Equations examples}
 公式序号的右侧与右边线顶边排写。
@@ -102,7 +106,7 @@ E=mc^2
 \end{multline}
 
 多行公式，使用\verb|\nonumber|关闭编号：
-\begin{align}
+\begin{align}\label{eq:align}
 &I(X_3;X_4)-I(X_3;X_4\mid{}X_1)-I(X_3;X_4\mid{}X_2)\nonumber\\
 =&[I(X_3;X_4)-I(X_3;X_4\mid{}X_1)]-I(X_3;X_4\mid{}\tilde{X}_2)\\
 =&I(X_1;X_3;X_4)-I(X_3;X_4\mid{}\tilde{X}_2)
@@ -193,6 +197,16 @@ draw=black]
     \qquad
     \subcaptionbox{长一点的字图图题 B}[0.4\textwidth]{\fbox{IMAGE}}%
     \bicaption{中文图题}{English Title}
+    \label{fig:test2}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \subcaptionbox{子图图题 A}[0.4\textwidth]{\fbox{IMAGE}}%
+    \qquad
+    \subcaptionbox{长一点的字图图题 B}[0.4\textwidth]{\fbox{IMAGE}}%
+    \bicaption{中文图题}{English Title}
+    \label{fig:test3}
 \end{figure}
 
 插入表格。表的编排建议采用国际通行的三线表即顶线、底线和栏目线 注意：没有竖线 。其中顶线和底线为0.75pt粗线，栏目线为0.5pt细线，排版三线表必要时可加辅助线，三线表的组成要素包括：表序、表题、项目栏、表体、表注。表头设计应简单明了，尽量不用斜线。表头中可采用化学符号或物理量符号。
@@ -209,7 +223,7 @@ draw=black]
 	\bicaption[指向一个表格的表目录索引]
 	{一个颇为标准的三线表格\footnotemark[1]}
 	{ATableExample}
-	\label{tab:firstone}
+	\label{tab:1st}
 	\begin{tabular}{@{}llr@{}}\toprule
 		\multicolumn{2}{c}{Item}\\\cmidrule(r){1-2}
 		Animal&Description&Price(\$)\\\midrule
@@ -222,7 +236,7 @@ draw=black]
 \end{table}
 \footnotetext[1]{这个例子来自\href{http://www.ctan.org/tex-archive/macros/latex/contrib/booktabs/booktabs.pdf}{《Publication quality tables in LATEX》}(booktabs宏包的文档)。这也是一个在表格中使用脚注的例子，请留意与threeparttable实现的效果有何不同。}
 
-下面一个是一个更复杂的表格，用\verb|threeparttable|宏包实现带有脚注的表格，如\\fbox{IMAGE}{tab:footnote}。
+下面一个是一个更复杂的表格，用\verb|threeparttable|宏包实现带有脚注的表格，如\cref{tab:footnote}。
 
 \newcolumntype{d}[1]{D{.}{.}{#1}}% or D{.}{,}{#1} or D{.}{\cdot}{#1}
 \begin{table}[!htpb]

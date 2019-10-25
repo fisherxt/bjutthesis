@@ -90,10 +90,10 @@
   \newCJKfontfamily\bjut@songti[AutoFakeBold=1.75]{SimSun}
   \newCJKfontfamily\bjut@fangsong[AutoFakeBold=1.75]{FangSong} } {%
   \ifthenelse{\equal{\bjut@fontset}{mac}}{%
-  	\setCJKfamilyfont{zhhei}{Heiti SC Medium}
-  	\newCJKfontfamily\bjut@songti[AutoFakeBold=1.75]{Songti SC}
-  	\newCJKfontfamily\bjut@kaishu[AutoFakeBold=1.75]{Kaiti SC}
-  	\newCJKfontfamily\bjut@fangsong[AutoFakeBold=1.75]{STFangsong} } {%
+    \setCJKfamilyfont{zhhei}{Heiti SC Medium}
+    \newCJKfontfamily\bjut@songti[AutoFakeBold=1.75]{Songti SC}
+    \newCJKfontfamily\bjut@kaishu[AutoFakeBold=1.75]{Kaiti SC}
+    \newCJKfontfamily\bjut@fangsong[AutoFakeBold=1.75]{STFangsong} } {%
     \let\bjut@kaishu\kaishu
     \let\bjut@songti\songti
     \let\bjut@fangson\fangsong } }
