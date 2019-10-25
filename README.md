@@ -1,4 +1,4 @@
-# BJUTThesis
+# ![BJUTThesis](.\cls\bjutthesis.png)
 
 ## 欢迎使用北京工业大学博士学位论文模板
 
@@ -21,7 +21,7 @@
 
 ## 更新日志
 
-- `20191024` 加入MacOS适配。
+- `@20191024` 加入MacOS适配。
 
 ## 致谢
 

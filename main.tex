@@ -1,20 +1,21 @@
 %!TEX program = xelatex
 %-*- coding: UTF-8 -*-
 \documentclass[no-math]{bjutthesis} 
-\usepackage{lipsum, zhlipsum, fancyvrb}    % for test use
+\usepackage{lipsum, zhlipsum}    % for test use
 %\usepackage{layout, showframe}   % for test use
 
-% == commonly used packages regarding eqs, figs and tabs
+% == packages
 \usepackage{amsmath, mathtools, upgreek}
 \usepackage{graphicx, tikz, pgfplots}
 \usepackage{threeparttable, booktabs, longtable, multirow, dcolumn}
+\usepackage{fancyvrb}
 
 % == input
 \bjutset {%
   clc            = {TU311},      % 中文图书分类号
   udc            = {004},        % 十进制分类号
   schoolcode     = {10005},      % 学校编号
-  secretlevel    = {公开},        % 密级
+  secretlevel    = {公开},       % 密级
   studentid      = {B200004000}, % 学号
   % -- 中文信息
   ctitle         = {\bjutthesis\,\version\,——北京工业大学博士学位论文{\LaTeX}模板},

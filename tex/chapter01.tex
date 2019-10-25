@@ -1,8 +1,6 @@
 \bichapter{绪论}{Introduction}\label{chap:intro}
 \let\originalverb\verb
 \renewcommand\verb{~\originalverb} % add space before \verb command
-\let\originalcref\cref
-\renewcommand\cref[1]{\originalcref{#1}~} % add space before \verb command
 
 研究生学位论文是研究生科学研究工作的全面总结，是描述其研究成果、代表其研究水平的重要学术文献资料，是申请和授予相应学位的基本依据。学位论文撰写是研究生培养过程的基本训练之一，必须按照确定的规范认真执行。指导教师应加强指导，严格把关。
 论文撰写应符合国家及各专业部门制定的有关标准，符合汉语语法规范。我校《研究生学位论文撰写规范》参照中华人民共和国国家标准GB7713-87《科学技术报告、学位论文和学术论文的编写格式》的要求制订。
@@ -174,26 +172,26 @@ draw=black]
 	\bicaption{流程图\label{fig:flow_chart}}{Sample Flow Chart}	
 \end{figure}
 
-\cref{fig:test}为带子图的图形环境。引用子图，如\cref{fig:test:A}所示。
-\begin{figure}[!h]
+\cref{fig:test}~为带子图的图形环境。引用子图，如\\fbox{IMAGE}{fig:test:A}~所示。
+\begin{figure}[htbp]
     \centering
     \bisubcaptionbox
     {子图图题 A\label{fig:test:A}}
-    {Subfigure A}[0.4\textwidth]{IMAGE}%
+    {Subfigure A}[0.4\textwidth]{\fbox{IMAGE}}%
     \qquad
     \bisubcaptionbox
     {长一点的字图图题 B\label{fig:test:B}}
-    {Subfigure long title B}[0.4\textwidth]{IMAGE}%
+    {Subfigure long title B}[0.4\textwidth]{\fbox{IMAGE}}%
     \bicaption{中文图题}{English Title}
     \label{fig:test}
 \end{figure}
 
 带子图的图形环境，子图仅中文图题。
-\begin{figure}[!h]
+\begin{figure}[htbp]
     \centering
-    \subcaptionbox{子图图题 A}[0.4\textwidth]{IMAGE}%
+    \subcaptionbox{子图图题 A}[0.4\textwidth]{\fbox{IMAGE}}%
     \qquad
-    \subcaptionbox{长一点的字图图题 B}[0.4\textwidth]{IMAGE}%
+    \subcaptionbox{长一点的字图图题 B}[0.4\textwidth]{\fbox{IMAGE}}%
     \bicaption{中文图题}{English Title}
 \end{figure}
 
@@ -224,7 +222,7 @@ draw=black]
 \end{table}
 \footnotetext[1]{这个例子来自\href{http://www.ctan.org/tex-archive/macros/latex/contrib/booktabs/booktabs.pdf}{《Publication quality tables in LATEX》}(booktabs宏包的文档)。这也是一个在表格中使用脚注的例子，请留意与threeparttable实现的效果有何不同。}
 
-下面一个是一个更复杂的表格，用\verb|threeparttable|宏包实现带有脚注的表格，如\cref{tab:footnote}。
+下面一个是一个更复杂的表格，用\verb|threeparttable|宏包实现带有脚注的表格，如\\fbox{IMAGE}{tab:footnote}。
 
 \newcolumntype{d}[1]{D{.}{.}{#1}}% or D{.}{,}{#1} or D{.}{\cdot}{#1}
 \begin{table}[!htpb]
