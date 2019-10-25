@@ -1,4 +1,4 @@
-# ![BJUTThesis](.\cls\bjutthesis.png)
+# ![BJUTThesis](cls/bjutthesis.png)
 
 ## 欢迎使用北京工业大学博士学位论文模板
 
