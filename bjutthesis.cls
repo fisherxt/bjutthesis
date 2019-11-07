@@ -160,7 +160,7 @@
 \captionsetup[figure][bi-second]{name=Fig.}
 \captionsetup[table]{labelsep=space}
 \captionsetup[table][bi-first]{name=表}
-\captionsetup[table][bi-second]{name=Tab.}
+\captionsetup[table][bi-second]{name=Table}
 
 %% ==== cross references
 \RequirePackage{hyperref}
