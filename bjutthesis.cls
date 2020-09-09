@@ -14,7 +14,7 @@
     today      = old }
 
 %% ==== Template MACROs
-\DeclareRobustCommand{\bjutthesis}{  {\rmfamily B\textsc{\kern-.1emj\kern-.025emu\kern-.02emt}\kern-.08emT\kern-.1667em\lower.475ex\hbox{H}\kern-.0667emE\kern-.0667em\lower.475ex\hbox{S}\kern-.05emI\kern-.0667em\lower.475ex\hbox{S}}  }
+\DeclareRobustCommand{\bjutthesis}{ {\rmfamily B\textsc{\kern-.1emj\kern-.025emu\kern-.02emt}\kern-.08emT\kern-.1667em\lower.475ex\hbox{H}\kern-.0667emE\kern-.0667em\lower.475ex\hbox{S}\kern-.05emI\kern-.0667em\lower.475ex\hbox{S}} }
 \def\version{ver.\,2.7}
 % -- theme color
 \RequirePackage{xcolor}
@@ -86,17 +86,26 @@
 \RequirePackage{ifthen}
 \newcommand\bjut@fontset{\csname g__ctex_fontset_tl\endcsname}
 \ifthenelse{\equal{\bjut@fontset}{windows}}{%
+  % windows
   \newCJKfontfamily\bjut@kaishu[AutoFakeBold=1.75]{KaiTi}
   \newCJKfontfamily\bjut@songti[AutoFakeBold=1.75]{SimSun}
   \newCJKfontfamily\bjut@fangsong[AutoFakeBold=1.75]{FangSong} } {%
   \ifthenelse{\equal{\bjut@fontset}{mac}}{%
+    % mac
     \setCJKfamilyfont{zhhei}{Heiti SC Medium}
     \newCJKfontfamily\bjut@songti[AutoFakeBold=1.75]{Songti SC}
     \newCJKfontfamily\bjut@kaishu[AutoFakeBold=1.75]{Kaiti SC}
     \newCJKfontfamily\bjut@fangsong[AutoFakeBold=1.75]{STFangsong} } {%
-    \let\bjut@kaishu\kaishu
-    \let\bjut@songti\songti
-    \let\bjut@fangson\fangsong } }
+    \ifthenelse{\equal{\bjut@fontset}{fandol}}{%
+      % fandol
+        \let\bjut@kaishu\kaishu
+        \let\bjut@songti\songti
+        \let\bjut@fangson\fangsong
+    } {%
+        % other
+        \let\bjut@kaishu\kaishu
+        \let\bjut@songti\songti
+        \let\bjut@fangson\fangsong } } }
 \newcommand\textbfkai[1]{{\bfseries\bjut@kaishu #1}}
 \newcommand\textbfsong[1]{{\bfseries\bjut@songti #1}}
 \newcommand\textbffs[1]{{\bfseries\bjut@fangsong #1}}
@@ -209,14 +218,17 @@
 \renewcommand{\cftsubsecaftersnumb}{}
 
 %% ==== bibliography
-\RequirePackage[super, sort&compress]{gbt7714}
+\RequirePackage[sort&compress]{gbt7714}
+\bibliographystyle{gbt7714-numerical}
+%\citestyle{numbers}
 \renewcommand\bibfont{\zihao{5}}
 \addtolength\bibsep{-0.7em}
 
 % ==== cover, titlepage and statementpage
 \RequirePackage[pagecolor=white, nopagecolor=white]{pagecolor}  % -- pagecolor
 \RequirePackage[copies]{contour}  % -- outlined text on cover
-\RequirePackage[normalem]{ulem}   % -- multiline underlined text
+%\RequirePackage[normalem]{ulem}   % -- multiline underlined text
+\RequirePackage{xeCJKfntef}
 \RequirePackage{ragged2e, tabularx}         % -- fully justified text
 \contourlength{2pt}
 \setlength\RaggedRightParindent{0pt}
