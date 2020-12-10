@@ -1,4 +1,4 @@
-# ![BJUTThesis](cls/bjutthesis.png)
+# ![BJUTThesis](https://latex.codecogs.com/svg.latex?%5Chuge%20%5Crm%20B%5Ctextsc%7B%5Ckern-.06emj%5Ckern-.04emu%5Ckern-.025emt%7D%5Ckern-.1emT%5Ckern-.1667em%5Clower.475ex%5Chbox%7BH%7D%5Ckern-.0667emE%5Ckern-.0667em%5Clower.475ex%5Chbox%7BS%7D%5Ckern-.05emI%5Ckern-.0667em%5Clower.475ex%5Chbox%7BS%7D)
 
 ## 欢迎使用北京工业大学博士学位论文模板
 
@@ -9,6 +9,12 @@
 模板的格式细节极大程度地遵循了撰写规范。
 
 与硕士学位论文不同，工大博士学位论文要求提供双语的扉页、摘要、目录、图题和表题，模板对此予以实现，[样例文档](main.pdf) 提供了使用示例和效果预览。
+
+![preview_01](cls/preview_01.png)
+
+![preview_02](cls/preview_02.png)
+
+![preview_03](cls/preview_03.png)
 
 ## 使用环境
 
@@ -22,10 +28,26 @@
 
 ## 更新日志
 
-- `@20191024`：加入macOS适配。
+- `@20201210`：
+  - 修复双语图题、表题指定宽度时英文标题无法居中的 bug ，需`caption`、`bicaption` 宏包最新，或从https://gitlab.com/axelsommerfeldt/caption/-/tree/master/tex 手动下载 `*.sty` 文件放置模板目录或覆盖旧版宏包；
+  
+  - 添加图、表和术语目录，此类目录撰写规范并未要求，如无需求编译前删除相关命令即可；
+  
+  - 更新参考文献作者姓名为 `\textsc` 格式；
+  
+  - 增加`where`环境，方便添加公式变量的解释，用法如下。
+  
+    ```latex
+    \begin{where}[式中：]
+    $E$ & 能量； \\
+    $m$ & 质量； \\
+    $c$ & 光速。光速指光在真空中的速率，是一个物理常数。光速指光在真空中的速率。
+    \end{where}
+    ```
 - `@20200910`：
   - macOS 10.15 下需升级 CTeX 宏集至2.5.4及以上版本以确保字体设置通过编译。
   - 修复 macOS 下扉页中文标题无法自动换行的问题。
+- `@20191024`：加入macOS适配。
 
 ## 致谢
 
