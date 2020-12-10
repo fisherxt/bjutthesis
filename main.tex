@@ -11,7 +11,7 @@
 \usepackage{fancyvrb}
 
 % == input
-\bjutset {%
+\bjutset{%
   clc            = {TU311},      % 中文图书分类号
   udc            = {004},        % 十进制分类号
   schoolcode     = {10005},      % 学校编号
@@ -20,12 +20,12 @@
   % -- 中文信息
   ctitle         = {\bjutthesis\,\version\,——北京工业大学博士学位论文{\LaTeX}模板},
   cauthor        = {姚明}, 
-  cdiscipline    = {体育学},     % 学科  
+  cdiscipline    = {土木工程},   % 学科  
   cmajor         = {职业篮球},   % 研究方向
   cdegree        = {工学博士}, 
   csupervisor    = {杜修力},
   csupervstitle  = {教授},
-  ccollege       = {XX学院},  
+  ccollege       = {城市建设学部},  
   cdate          = {\the\year~年\the\month~月},
   corganization  = {北京工业大学},
   % -- 英文信息
@@ -34,16 +34,20 @@
   emajor         = {Basketball},
   eauthor        = {YAO Ming},
   esupervisor    = {DU Xiuli},
-  ecollege       = {College of Architecture and Civil Engineering},
-  edate          = {\today} }
+  ecollege       = {Faculty of Urban Construction},
+  edate          = {\today}
+}
 
 \begin{document}
-\makecover                          % -- 封面
+\makecover                          % -- 封面（PDF使用，打印版无需）
 \maketitle                          % -- 内封（中、英文）           
 \makestate                          % -- 声明页
 \frontmatter                        %% ==== 前页 ====
 \include{./tex/abstract}            % -- 摘要，关键词
 \makebitoc                          % -- 目录（中、英文）
+\listoffigures                      % -- （可选）插图目录
+\listoftables                       % -- （可选）表格目录
+\printnomenclature                  % -- （可选）术语表
 \mainmatter                         %% ==== 正文 ====
 \include{./tex/chapter01}           % -- 第1,2,...章
 \include{./tex/chapter02}           % -- 
