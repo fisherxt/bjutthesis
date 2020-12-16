@@ -5,13 +5,22 @@
 \RequirePackage{xparse}
 \RequirePackage{ezinfo}
 %
+%% ==== Options of .cls
+\RequirePackage{kvdefinekeys}
+\RequirePackage{kvsetkeys}
+\RequirePackage{kvoptions}
+\SetupKeyvalOptions{
+  family=bjut,
+  prefix=bjut@,
+  setkeys=\kvsetkeys}
+%
 %% ==== Basic
 \LoadClass[UTF8, scheme=plain, zihao=-4, linespread=1.42, sub3section]{ctexbook}
 \ctexset {%
     punct      = quanjiao,
     space      = auto,
     autoindent = true,
-    today      = old }
+    today      = old}
 %
 %% ==== Template MACROs
 \DeclareRobustCommand{\bjutthesis}{\rmfamily B\textsc{\kern-.1emj\kern-.025emu\kern-.02emt}\kern-.08emT\kern-.1667em\lower.475ex\hbox{H}\kern-.0667emE\kern-.0667em\lower.475ex\hbox{S}\kern-.05emI\kern-.0667em\lower.475ex\hbox{S}}
@@ -31,7 +40,7 @@
 \let\subsubsubsection\paragraph
 \setlength{\parskip}{\z@}
 \ctexset {%
-  chapter = {
+  chapter = {%
     beforeskip   = \z@,
     afterskip    = 5mm,
     fixskip      = false,
@@ -45,36 +54,36 @@
     aftername    = \hspace{\ccwd},
     afterindent  = true,
     aftertitle   = {},
-    pagestyle    = bjut@headings },
-  section = {
+    pagestyle    = bjut@headings},
+  section = {%
     beforeskip   = \z@, % \z@,
     afterskip    = \z@, % 2.3ex plus .2ex,
     indent       = \z@,
     format       = \bjut@section@font\raggedright,
     aftername    = \hspace{\ccwd},
-    afterindent  = true },
-  subsection = {
+    afterindent  = true},
+  subsection = {%
     beforeskip   = \z@, % \z@,
     afterskip    = \z@, % 1.5ex plus .2ex,
     indent       = \z@,
     format       = \bjut@subsection@font\raggedright,
     aftername    = \hspace{\ccwd},
-    afterindent  = true },
-  subsubsection = {
+    afterindent  = true},
+  subsubsection = {%
     beforeskip   = \z@,
     afterskip    = \z@,
     indent       = \z@,
     format       = \bjut@subsubsection@font,
     runin        = true,
-    aftertitle   = \hspace{\ccwd} },
-  paragraph = {
+    aftertitle   = \hspace{\ccwd}},
+  paragraph = {%
     beforeskip   = \z@,
     afterskip    = \z@,
     indent       = 2\ccwd,
     format       = \bjut@subsubsubsection@font,
     runin        = true,
     aftername    = {},
-    aftertitle   = \hspace{\ccwd} } }
+    aftertitle   = \hspace{\ccwd}}}
 %
 %% ==== fonts
 % -- times new roman
@@ -95,7 +104,7 @@
     \setCJKfamilyfont{zhhei}{Heiti SC Medium}
     \newCJKfontfamily\bjut@songti[AutoFakeBold=1.75]{Songti SC}
     \newCJKfontfamily\bjut@kaishu[AutoFakeBold=1.75]{Kaiti SC}
-    \newCJKfontfamily\bjut@fangsong[AutoFakeBold=1.75]{STFangsong} } {%
+    \newCJKfontfamily\bjut@fangsong[AutoFakeBold=1.75]{STFangsong}}{%
     \ifthenelse{\equal{\bjut@fontset}{fandol}}{%
       % fandol
       \let\bjut@kaishu\kaishu
@@ -112,7 +121,7 @@
 %
 %% ==== layout
 \RequirePackage{geometry}
-\geometry {%
+\geometry{%
   a4paper,
   hcentering,
   ignoreall,
@@ -123,7 +132,7 @@
   bottom      = 25.4mm,
   left        = 31.7mm,
   right       = 31.7mm,
-  footskip    = 8.5mm }
+  footskip    = 8.5mm}
 %
 %% ==== pagestyle
 \def\bjut@header@text{北京工业大学工学博士学位论文}
@@ -254,9 +263,9 @@
       \renewcommand\arraystretch{.75}
       \begin{tabular}{@{}p{28mm}@{：}l}
         \makebox[28mm][s]{中文图书分类号}  & \ez@clc \\
-        \makebox[28mm][s]{密级}            & \ez@secretlevel \\
-        \makebox[28mm][s]{\hfill UDC}      & \ez@udc \\  
-        \makebox[28mm][s]{学校代码}        & \ez@schoolcode \\
+        \makebox[28mm][s]{密级}           & \ez@secretlevel \\
+        \makebox[28mm][s]{\hfill UDC}    & \ez@udc \\  
+        \makebox[28mm][s]{学校代码}       & \ez@schoolcode \\
       \end{tabular}
     \end{flushleft}
     \vskip 1.5cm  
