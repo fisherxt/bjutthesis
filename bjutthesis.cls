@@ -29,6 +29,8 @@
 \RequirePackage{xcolor}
 \definecolor{bjut@color@official}{RGB}{0,150,195}
 \definecolor{bjut@color@doctorcover}{RGB}{186,15,43}
+\definecolor{bjut@color@mastercover}{RGB}{0,153,126}
+\definecolor{bjut@color@profmastercover}{RGB}{5,146,191}
 %
 %% ==== format: FiveLevel-structured 
 \setcounter{secnumdepth}{4}

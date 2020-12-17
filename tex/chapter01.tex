@@ -95,9 +95,9 @@
 E=mc^2
 \end{equation}
 \begin{where}[式中：]
-$ E $ & 能量； \\
-$ m $ & 质量； \\
-$ c $ & 光速。光速指光在真空中的速率，是一个物理常数。光速指光在真空中的速率。
+    $E$ & 能量； \\
+    $m$ & 质量； \\
+    $c$ & 光速。光速指光在真空中的速率，是一个物理常数。光速指光在真空中的速率。
 \end{where}
 %\begin{flushleft}
 %    \begin{tabularx}{\textwidth}{@{}rr@{~——~}X@{}}
@@ -116,9 +116,9 @@ $ c $ & 光速。光速指光在真空中的速率，是一个物理常数。光
 \end{equation}
 
 \begin{multline}\label{eq:long}
-\frac{1}{2}\Delta(f_{ij}f^{ij})=
-2\left(\sum_{i<j}\chi_{ij}(\sigma_i-\sigma_j)^2+f^{ij}\nabla_j\nabla_i(\Delta f)\right .\\
-\left .+\nabla_kf_{ij}\nabla^kf^{ij}+f^{ij}f^k\left[2\nabla_iR_{jk}-\nabla_kR_{ij}\right]\vphantom{\sum_{i<j}}\right)
+    \frac{1}{2}\Delta(f_{ij}f^{ij})=
+    2\left(\sum_{i<j}\chi_{ij}(\sigma_i-\sigma_j)^2+f^{ij}\nabla_j\nabla_i(\Delta f)\right .\\
+    \left .+\nabla_kf_{ij}\nabla^kf^{ij}+f^{ij}f^k\left[2\nabla_iR_{jk}-\nabla_kR_{ij}\right]\vphantom{\sum_{i<j}}\right)
 \end{multline}
 
 \begin{align}
@@ -142,20 +142,19 @@ $ c $ & 光速。光速指光在真空中的速率，是一个物理常数。光
 
 多行公式，可用\verb|\nonumber|关闭部分编号：
 \begin{align}\label{eq:align}
-&I(X_3;X_4)-I(X_3;X_4\mid{}X_1)-I(X_3;X_4\mid{}X_2)\\
-=&[I(X_3;X_4)-I(X_3;X_4\mid{}X_1)]-I(X_3;X_4\mid{}\tilde{X}_2)\nonumber\\
-=&I(X_1;X_3;X_4)-I(X_3;X_4\mid{}\tilde{X}_2)
+      & I(X_3;X_4)-I(X_3;X_4\mid{}X_1)-I(X_3;X_4\mid{}X_2)\\
+    = & [I(X_3;X_4)-I(X_3;X_4\mid{}X_1)]-I(X_3;X_4\mid{}\tilde{X}_2)\nonumber\\
+    = & I(X_1;X_3;X_4)-I(X_3;X_4\mid{}\tilde{X}_2)
 \end{align}
 
 方程组：
 \begin{align}
-\begin{cases}
-\ u_{tt}(x,t)= b(t)\triangle u(x,t-4)&\\
-\ \hspace{42pt}- q(x,t)f[u(x,t-3)]+te^{-t}\sin^2 x,  &  t \neq t_k; \\
-\ u(x,t_k^+) - u(x,t_k^-) = c_k u(x,t_k), & k=1,2,3\ldots ;\\
-\ u_{t}(x,t_k^+) - u_{t}(x,t_k^-) =c_k u_{t}(x,t_k), &
-k=1,2,3\ldots\ .
-\end{cases}
+    \begin{cases}
+        \ u_{tt}(x,t)= b(t)\triangle u(x,t-4)                & \\
+        \ \hspace{42pt}- q(x,t)f[u(x,t-3)]+te^{-t}\sin^2 x,  & t\neq t_k; \\
+        \ u(x,t_k^+) - u(x,t_k^-) = c_k u(x,t_k),            & k=1,2,3\ldots ;\\
+        \ u_{t}(x,t_k^+) - u_{t}(x,t_k^-) =c_k u_{t}(x,t_k), & k=1,2,3\ldots\ .
+    \end{cases}
 \end{align}
 
 \bisubsection{图表示例}{Figures and tables examples}
@@ -258,14 +257,18 @@ draw=black]
 	{一个颇为标准的三线表格\footnotemark[1]}
 	{A Table Example}
 	\label{tab:1st}
-	\begin{tabular}{@{}llr@{}}\toprule
-		\multicolumn{2}{c}{Item}\\\cmidrule(r){1-2}
-		Animal&Description&Price(\$)\\\midrule
-		Gnat&pergram&13.65\\
-		&each&0.01\\
-		Gnu&stuffed&92.50\\
-		Emu&stuffed&33.33\\
-		Armadillo&frozen&8.99\\\bottomrule
+	\begin{tabular}{@{}llr@{}}
+        \toprule
+		\multicolumn{2}{c}{Item} & \\
+        \cmidrule(r){1-2}
+		Animal    & Description  & Price(\$) \\
+        \midrule
+		Gnat      & pergram      & 13.65 \\
+		          & each         & 0.01 \\
+		Gnu       & stuffed      & 92.50 \\
+		Emu       & stuffed      & 33.33 \\
+		Armadillo & frozen       & 8.99 \\
+        \bottomrule
 	\end{tabular}
 \end{table}
 \footnotetext[1]{这个例子来自\href{http://www.ctan.org/tex-archive/macros/latex/contrib/booktabs/booktabs.pdf}{《Publication quality tables in \LaTeX》}(booktabs宏包的文档)。这也是一个在表格中使用脚注的例子，请留意与\texttt{threeparttable}实现的效果有何不同。}
@@ -280,18 +283,18 @@ draw=black]
 	\begin{threeparttable}[b]
 		\begin{tabular}{ccd{4}cccc}
 			\toprule
-			\multirow{2}{6mm}{total}&\multicolumn{2}{c}{20\tnote{1}} & \multicolumn{2}{c}{40} &  \multicolumn{2}{c}{60}\\
-			\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
-			&www & \multicolumn{1}{c}{k} & www & k & www & k \\ % 使用说明符 d 的列会自动进入数学模式，使用 \multicolumn 对文字表头做特殊处理
+			\multirow{2}{6mm}{total} & \multicolumn{2}{c}{20\tnote{1}} & \multicolumn{2}{c}{40}   & \multicolumn{2}{c}{60}\\
+			\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+			& www & \multicolumn{1}{c}{k} & www & k & www & k \\ % 使用说明符 d 的列会自动进入数学模式，使用 \multicolumn 对文字表头做特殊处理
 			\midrule
-			&$\underset{(2.12)}{4.22}$ & 120.0140\tnote{2} & 333.15 & 0.0411 & 444.99 & 0.1387 \\
-			&168.6123 & 10.86 & 255.37 & 0.0353 & 376.14 & 0.1058 \\
-			&6.761    & 0.007 & 235.37 & 0.0267 & 348.66 & 0.1010 \\
+			& $\underset{(2.12)}{4.22}$ & 120.0140\tnote{2} & 333.15 & 0.0411 & 444.99 & 0.1387 \\
+			& 168.6123 & 10.86 & 255.37 & 0.0353 & 376.14 & 0.1058 \\
+			& 6.761    & 0.007 & 235.37 & 0.0267 & 348.66 & 0.1010 \\
 			\bottomrule
 		\end{tabular}
 		\begin{tablenotes}\footnotesize
-			\item [1] the first note.% or \item [a]
-			\item [2] the second note.% or \item [b]
+			\item [1] the first note.  % or \item [a]
+			\item [2] the second note. % or \item [b]
 		\end{tablenotes}
 	\end{threeparttable}
 \end{table}
