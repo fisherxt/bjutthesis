@@ -23,8 +23,8 @@
 目前测试通过的平台：
 
 -  `Windows 7` /`Windows 10` ，`TeXLive` ~~`2018`~~/~~`2019`~~/`2020`;
--  ~~`macOS` `10.13.6`，`MacTeX` `2019`~~;
--  `macOS` `10.15.6`，`MacTeX` `2020`.
+-  ~~`macOS 10.13.6`，`MacTeX 2019`~~;
+-  `macOS 10.15.6`，`MacTeX 2020`.
 
 ## 更新日志
 
@@ -54,7 +54,7 @@
   
 - `@20200910`：
   
-  - `macOS 10.15` 下需升级 `CTeX` 宏集至 `2.5.4` 或更新版本，以确保字体设置通过编译。
+  - `macOS 10.15` 下需升级 [`CTeX`](https://github.com/CTeX-org) 宏集至 `2.5.4` 或更新版本，以确保字体设置通过编译。
   - 修复 `macOS` 下扉页中文标题无法自动换行的问题。
   
 - `@20191024`：
@@ -63,7 +63,7 @@
 
 ## 致谢
 
-* 感谢 [`TeX`](http://www.ctan.org) 的开发人员和贡献者，以及 [`CTeX`](http://www.ctex.org/HomePage) 提供的 `LaTeX` 中文支持。
+* 感谢 [`TeX`](http://www.ctan.org) 的开发人员和贡献者，以及 [`CTeX`](https://github.com/CTeX-org) 提供的 `LaTeX` 中文支持。
 * 感谢 [部分](http://yzlab.net/BjutThsis.html) 早期的工作为模板制作提供了一定参考。
 
 ## 声明
