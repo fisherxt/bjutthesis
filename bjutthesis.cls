@@ -111,12 +111,12 @@
       % fandol
       \let\bjut@kaishu\kaishu
       \let\bjut@songti\songti
-      \let\bjut@fangson\fangsong
+      \let\bjut@fangsong\fangsong
     }{%
       % other
       \let\bjut@kaishu\kaishu
       \let\bjut@songti\songti
-      \let\bjut@fangson\fangsong}}}
+      \let\bjut@fangsong\fangsong}}}
 \newcommand\textbfkai[1]{{\bfseries\bjut@kaishu #1}}
 \newcommand\textbfsong[1]{{\bfseries\bjut@songti #1}}
 \newcommand\textbffs[1]{{\bfseries\bjut@fangsong #1}}
